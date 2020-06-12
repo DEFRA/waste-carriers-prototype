@@ -23,11 +23,12 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Waste exemptions prototype
+        Waste carrier or broker prototype
       </h1>
       <p class="govuk-body-l">This is not the live service, the live service is <a href="https://www.gov.uk/waste-carrier-or-broker-registration">register as a waste carrier or broker</a>. There is also <a href="https://www.wastecarriersregistration.service.gov.uk/">the renewal service</a>.</p>
       <p class="govuk-body">This prototype is for testing the online part of the waste carrier or broker registration and renewal service. It currently contains a happy path for Limited Companies registrations and renewals via magic link. <!--the complete user journey as per the live service, as well as specific deviations where we are trying out a new approach. Details on how to access all of this can be found in the handy table further down the page--></p>
 
+      <p class="govuk-body">The sprint is 40 and this is version 1 of the design system version prototype. <!--the complete user journey as per the live service, as well as specific deviations where we are trying out a new approach. Details on how to access all of this can be found in the handy table further down the page--></p>
 
 {% import "includes/macros.html" as macros %}
 
@@ -35,21 +36,13 @@
   <a href="/prototype-admin/clear-data">Clear stored data</a>
 </p>
 
-
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <!-- ########################################################################### -->
 
-      <h2 class="govuk-heading-m">
-        Current research
-      </h2>
+      
       <ul class="govuk-list govuk-list--bullet">
-        {{ macros.list( "WCR magic link renewal", "/wcr-magic-link/email-renew" ) }}
+        {{ macros.list( "Version 1", "index-v1" ) }}
       </ul>
-      <ul class="govuk-list govuk-list--bullet">
-        {{ macros.list( "WCR registration", "/your-registration/start-page" ) }}
-      </ul>
-
-
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <!-- ########################################################################### -->

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Waste carrier or broker prototype
+{% endblock %}
+
+{% set versionxxx = "v1" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Waste carrier or broker prototype
+      </h1>
+      {% import "includes/macros.html" as macros %}
+
+      <p><a href="/v25/cls">Clear permit data</a></p>
+      <!-- user lab -->
+      <h2 class="govuk-heading-m">Prototype pages</h2>
+
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            <!-- ########################################################################### -->
+      
+          <h2 class="govuk-heading-m">
+            Current research
+          </h2>
+          <ul class="govuk-list govuk-list--bullet">
+            {{ macros.list( "WCR magic link renewal", "/v1/wcr-magic-link/email-renew" ) }}
+          </ul>
+          <ul class="govuk-list govuk-list--bullet">
+            {{ macros.list( "WCR registration", "/v1/your-registration/start-page" ) }}
+          </ul>
+
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <!-- ########################################################################### -->
+    
+           </div>
+              </div>
+
+            {% endblock %}

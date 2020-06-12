@@ -24,14 +24,14 @@ Is this a new registration?
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-  <form action="/wcr-magic-link/choose-country" method="post">
+    <form action="{{formAction}}" method="post">
 
-    <div class="form-group">
+    <div class="govuk-form-group">
 
 
       {{ govukRadios({
         idPrefix: "new-registration",
-        name: "started-registration",
+        name: "started",
 fieldset: {
   legend: {
     text: "Is this a new registration?    ",
@@ -58,8 +58,8 @@ items: [
       <a href="/{{folder}}/pages/privacy" target="_blank">Privacy: how we use your personal information (opens new tab)</a>
     </p>
 
-    <div class="form-group">
-        {{ govukButton({
+    <div class="govuk-form-group">
+      {{ govukButton({
           text: "Continue"
         }) }}
     </div>

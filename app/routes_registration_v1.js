@@ -1,10 +1,23 @@
 const express = require('express')
 const router = express.Router()
 
-var folder = "registration-v1"
+var folder = "v1"
+var servicename = "Waste carrier or broker prototype"
+var paymentMethod = "govpay"  // or "govpay"
+
 
 // HTML for standard buttons
 var backlink = '<a href="javascript:history.back()" class="govuk-back-link">Back</a>'
+var submitButton = '<button type="submit" id="continueButton" class="govuk-button" name="Continue">Continue</button>'
+//var completeLink = '<a id="completeLink" href="/'+folder+'/save-and-return/check">Continue later</a>'
+var completeLink = ''
+
+function nocache(req, res, next) {
+  res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  res.header('Expires', '-1');
+  res.header('Pragma', 'no-cache');
+  next();
+}
 
 router.use(function (req, res, next) {
     // set a folder and store in locals
@@ -24,23 +37,28 @@ router.use(function (req, res, next) {
   // New registration ==============================================================
 
 router.get('/your-registration/new-registration', function (req, res) {
-    res.render(folder + '/your-registration/new-registration',{
-        "formAction":"/"+ folder + "/save-and-return/save-choice"
+    res.render('v1/your-registration/new-registration',{
+        "formAction":"/v1/your-registration/new-registration-check"
     })
   })
 
   router.post('/your-registration/new-registration', function (req, res) {
-    res.render(folder + '/your-registration/new-registration',{
-        "formAction":"/"+ folder + "/save-and-return/save-choice"
+    res.render('v1/your-registration/new-registration',{
+        "formAction":"/v1/your-registration/new-registration-check"
     })
   })
   
   // Route to check if application has started and redirect
-  router.post('/save-and-return/save-choice', function (req, res) {
-    if (req.body['started-application']=="no") {
-      res.redirect("/"+ folder + "/wcr-magic-link/choose-country")
+  router.post('/your-registration/new-registration-check', function (req, res) {
+  
+    if (req.body['started']=="yes") {
+      res.redirect("/v1/your-registration/choose-country")
     } else {
-      res.redirect("/"+ folder + "/save-and-return/already-started")
+      res.redirect("/v1/your-registration/wc-number")
     }
   })
+
+
+
+  
 module.exports = router
