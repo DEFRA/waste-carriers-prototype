@@ -20,5 +20,27 @@ router.use(function (req, res, next) {
   
     next()
   });
+
+  // New registration ==============================================================
+
+router.get('/your-registration/new-registration', function (req, res) {
+    res.render(folder + '/your-registration/new-registration',{
+        "formAction":"/"+ folder + "/save-and-return/save-choice"
+    })
+  })
+
+  router.post('/your-registration/new-registration', function (req, res) {
+    res.render(folder + '/your-registration/new-registration',{
+        "formAction":"/"+ folder + "/save-and-return/save-choice"
+    })
+  })
   
+  // Route to check if application has started and redirect
+  router.post('/save-and-return/save-choice', function (req, res) {
+    if (req.body['started-application']=="no") {
+      res.redirect("/"+ folder + "/wcr-magic-link/choose-country")
+    } else {
+      res.redirect("/"+ folder + "/save-and-return/already-started")
+    }
+  })
 module.exports = router

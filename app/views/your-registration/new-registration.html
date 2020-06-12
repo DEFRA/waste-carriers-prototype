@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Where is your principal place of business?
+Is this a new registration?
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -15,53 +15,58 @@
     </span>
   </p>
 </div>
-
-<a href="javascript:history.back();" class="govuk-back-link">Back</a>
-
+      <!--<a href="javascript:history.back();" class="govuk-back-link">Back</a>-->
 {% endblock %}
 {% block content %}
 
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <!--<form action="choosing-organisation" method="post" class="form">-->
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset govuk-!-margin-bottom-9">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-2">
-               Is this a new registration?
-              </h1>
-            </legend>
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <!--<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                  <h1 class="govuk-fieldset__heading">
-                    Where do you live?
-                  </h1>
-                </legend>-->
-                <div class="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
-                    <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                      Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                      No, I want to renew an existing registration
-                    </label>
-                  </div>
 
-                </div>
-              </fieldset>
-            </div>
-            <br />  <br />
-              <button class="govuk-button" data-module="govuk-button">
-                Continue
-              </button>
-      </form>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <form action="/wcr-magic-link/choose-country" method="post">
+
+    <div class="form-group">
+
+
+      {{ govukRadios({
+        idPrefix: "new-registration",
+        name: "started-registration",
+fieldset: {
+  legend: {
+    text: "Is this a new registration?    ",
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+items: [
+  {
+    value: "yes",
+    text: "Yes"
+  },
+  {
+    value: "no",
+    text: "No, I want to renew an existing registration"
+  }
+
+]
+}) }}
+
+</div>
+
+    <p>
+      When you apply for a permit you will need to give us some personal data such as your email address or date of birth.<br>
+      <a href="/{{folder}}/pages/privacy" target="_blank">Privacy: how we use your personal information (opens new tab)</a>
+    </p>
+
+    <div class="form-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
     </div>
+
+  </form>
+
   </div>
+</div>
 
 {% endblock %}
