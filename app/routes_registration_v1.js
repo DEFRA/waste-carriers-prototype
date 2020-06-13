@@ -58,7 +58,46 @@ router.get('/your-registration/new-registration', function (req, res) {
     }
   })
 
+  // WCR number ==============================================================
 
+  router.get('/your-registration/wc-number', function (req, res) {
+    res.render('v1/your-registration/wc-number',{
+        "formAction":"/v1/your-registration/choose-country"
+    })
+  })
 
+  // Choose country ==============================================================
+
+  router.get('/your-registration/choose-country', function (req, res) {
+    res.render('v1/your-registration/choose-country',{
+        "formAction":"/v1/your-registration/choose-country-check"
+    })
+  })
+
+  router.post('/your-registration/choose-country', function (req, res) {
+    res.render('v1/your-registration/choose-country',{
+        "formAction":"/v1/your-registration/choose-country-check"
+    })
+  })
+  
+  // Route to check if country is England
+  router.post('/your-registration/choose-country-check', function (req, res) {
+  
+    if (req.body['where-do-you-live']=="england") {
+        res.redirect("/v1/your-registration/you-can-register-in-england")
+
+    } if(req.body['where-do-you-live']=="scotland") {
+        res.redirect("/v1/your-registration/you-can-register-in-scotland")
+            
+    } if(req.body['where-do-you-live']=="wales") {
+        res.redirect("/v1/your-registration/you-can-register-in-wales")
+   
+    } if(req.body['where-do-you-live']=="northern-ireland") {
+        res.redirect("/v1/your-registration/you-can-register-in-northern-ireland")
+       
+    } else {
+      res.redirect("/v1/your-registration/you-can-only-register-in-the-uk")
+    }
+  })
   
 module.exports = router
