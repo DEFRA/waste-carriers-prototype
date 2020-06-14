@@ -1,0 +1,105 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What type of business or organisation are you?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="{{formAction}}" method="post">
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset">
+
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                  What type of business or organisation are you?
+                                </h1>
+                              </legend>                     
+                    </fieldset>
+                  </br>
+         <fieldset class="govuk-fieldset">
+
+              <div class="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="registration-holder" name="registration-holder" type="radio" value="sole-trader">
+                      <label class="govuk-label govuk-radios__label" for="registration-holder">
+                        Individual or sole trader
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="registration-holder-2" name="registration-holder" type="radio" value="ltd-comp">
+                      <label class="govuk-label govuk-radios__label" for="registration-holder-2">
+                        Limited company
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="registration-holder-3" name="registration-holder" type="radio" value="partnership">
+                      <label class="govuk-label govuk-radios__label" for="registration-holder-3">
+                        Partnership
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="registration-holder-4" name="registration-holder" type="radio" value="llp"> 
+                      <label class="govuk-label govuk-radios__label" for="registration-holder-4">
+                        Limited liability partnership
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="registration-holder-4" name="registration-holder" type="radio" value="la-public-body">
+                      <label class="govuk-label govuk-radios__label" for="registration-holder-4">
+                        Local authority or public body
+                      </label>
+                    </div>
+
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="registration-holder-4" name="registration-holder" type="radio" value="charity-trust">
+                      <label class="govuk-label govuk-radios__label" for="registration-holdere-4">
+                        Charity or trust
+                      </label>
+                    </div>
+                    
+
+              </div>
+
+          </fieldset>
+
+        </div>
+        <p>Not sure? Call our helpline on 03708 506 506.
+        </p>            <br/>
+
+            <div class="govuk-form-group">
+              {{ govukButton({
+                  text: "Continue"
+                }) }}
+            </div>
+
+      </form>
+      
+    </div>
+  </div>
+
+{% endblock %}

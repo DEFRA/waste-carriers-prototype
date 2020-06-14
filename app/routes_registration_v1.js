@@ -84,7 +84,7 @@ router.get('/your-registration/new-registration', function (req, res) {
   router.post('/your-registration/choose-country-check', function (req, res) {
   
     if (req.body['where-do-you-live']=="england") {
-        res.redirect("/"+folder+"/your-registration/you-can-register-in-england")
+        res.redirect("/"+folder+"/your-registration/registration-holder")
 
     } if(req.body['where-do-you-live']=="scotland") {
         res.redirect("/"+folder+"/your-registration/you-can-register-in-scotland")
@@ -96,8 +96,46 @@ router.get('/your-registration/new-registration', function (req, res) {
         res.redirect("/"+folder+"/your-registration/you-can-register-in-northern-ireland")
        
     } else {
-      res.redirect("/"+folder+"/your-registration/you-can-only-register-in-the-uk")
+      res.redirect("/"+folder+"/your-registration/registration-holder")
     }
   })
+ 
   
+
+  // Choose registration type ==============================================================
+
+  router.get('your-registration/registration-holder', function (req, res) {
+    res.render(folder+'/your-registration/registration-holder',{
+        "formAction":"/"+folder+"/your-registration/registration-holder-check"
+    })
+  })
+
+  router.post('/your-registration/registration-holder', function (req, res) {
+    res.render(folder+'/your-registration/registration-holder',{
+        "formAction":"/"+folder+"/your-registration/registration-holder-check"
+    })
+  })
+  
+  // Route to check if country is England
+  router.post('/your-registration/registration-holder-check', function (req, res) {
+  
+    if (req.body['registration-holder']=="charity-trust") {
+        res.redirect("/"+folder+"/your-registration/registration-type")
+
+    } if(req.body['registration-holder']=="la-public-body") {
+        res.redirect("/"+folder+"/your-registration/registration-type")
+            
+    } if(req.body['registration-holder']=="llp") {
+        res.redirect("/"+folder+"/your-registration/registration-type")
+   
+    } if(req.body['registration-holder']=="partnership") {
+        res.redirect("/"+folder+"/your-registration/registration-type")
+      
+    } if(req.body['registration-holder']=="ltd-comp") {
+        res.redirect("/"+folder+"/your-registration/registration-type")
+      
+    } else {
+      res.redirect("/"+folder+"/your-registration/registration-type")
+    }
+  })
 module.exports = router
