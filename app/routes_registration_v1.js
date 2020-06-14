@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 var folder = "v1"
-var servicename = "Waste carrier or broker prototype"
+var servicename = "Waste carrier or broker"
 var paymentMethod = "govpay"  // or "govpay"
 
 
