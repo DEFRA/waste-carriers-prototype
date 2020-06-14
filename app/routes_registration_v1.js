@@ -104,38 +104,38 @@ router.get('/your-registration/new-registration', function (req, res) {
 
   // Choose registration type ==============================================================
 
-  router.get('your-registration/registration-holder', function (req, res) {
-    res.render(folder+'/your-registration/registration-holder',{
-        "formAction":"/"+folder+"/your-registration/registration-holder-check"
-    })
-  })
+ // router.get('your-registration/registration-holder', function (req, res) {
+ //   res.render(folder+'/your-registration/registration-holder',{
+ //       "formAction":"/"+folder+"/your-registration/registration-holder-check"
+ //   })
+ // })
 
-  router.post('/your-registration/registration-holder', function (req, res) {
-    res.render(folder+'/your-registration/registration-holder',{
-        "formAction":"/"+folder+"/your-registration/registration-holder-check"
-    })
-  })
+ // router.post('/your-registration/registration-holder', function (req, res) {
+ //   res.render(folder+'/your-registration/registration-holder',{
+ //       "formAction":"/"+folder+"/your-registration/registration-holder-check"
+ //   })
+ // })
   
   // Route to check if country is England
-  router.post('/your-registration/registration-holder-check', function (req, res) {
+  // router.post('/your-registration/registration-holder-check', function (req, res) {
   
-    if (req.body['registration-holder']=="charity-trust") {
-        res.redirect("/"+folder+"/your-registration/registration-type")
+  //  if (req.body['registration-holder']=="charity-trust") {
+  //      res.redirect("/"+folder+"/your-registration/registration-type")
 
-    } if(req.body['registration-holder']=="la-public-body") {
-        res.redirect("/"+folder+"/your-registration/registration-type")
+  //  } if(req.body['registration-holder']=="la-public-body") {
+  //      res.redirect("/"+folder+"/your-registration/registration-type")
             
-    } if(req.body['registration-holder']=="llp") {
-        res.redirect("/"+folder+"/your-registration/registration-type")
+  //  } if(req.body['registration-holder']=="llp") {
+  //      res.redirect("/"+folder+"/your-registration/registration-type")
    
-    } if(req.body['registration-holder']=="partnership") {
-        res.redirect("/"+folder+"/your-registration/registration-type")
+  //  } if(req.body['registration-holder']=="partnership") {
+  //      res.redirect("/"+folder+"/your-registration/registration-type")
       
-    } if(req.body['registration-holder']=="ltd-comp") {
-        res.redirect("/"+folder+"/your-registration/registration-type")
+  //  } if(req.body['registration-holder']=="ltd-comp") {
+  //      res.redirect("/"+folder+"/your-registration/registration-type")
       
-    } else {
-      res.redirect("/"+folder+"/your-registration/registration-type")
-    }
-  })
+  //  } else {
+  //    res.redirect("/"+folder+"/your-registration/registration-type")
+  //  }
+ // })
 module.exports = router
