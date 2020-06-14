@@ -37,14 +37,14 @@ router.use(function (req, res, next) {
   // New registration ==============================================================
 
 router.get('/your-registration/new-registration', function (req, res) {
-    res.render('v1/your-registration/new-registration',{
-        "formAction":"/v1/your-registration/new-registration-check"
+    res.render(folder+'/your-registration/new-registration',{
+        "formAction":"/"+folder+"/your-registration/new-registration-check"
     })
   })
 
   router.post('/your-registration/new-registration', function (req, res) {
-    res.render('v1/your-registration/new-registration',{
-        "formAction":"/v1/your-registration/new-registration-check"
+    res.render(folder+'/your-registration/new-registration',{
+        "formAction":"/"+folder+"/your-registration/new-registration-check"
     })
   })
   
@@ -52,31 +52,31 @@ router.get('/your-registration/new-registration', function (req, res) {
   router.post('/your-registration/new-registration-check', function (req, res) {
   
     if (req.body['started']=="yes") {
-      res.redirect("/v1/your-registration/choose-country")
+      res.redirect("/"+folder+"/your-registration/choose-country")
     } else {
-      res.redirect("/v1/your-registration/wc-number")
+      res.redirect("/"+folder+"/your-registration/wc-number")
     }
   })
 
   // WCR number ==============================================================
 
   router.get('/your-registration/wc-number', function (req, res) {
-    res.render('v1/your-registration/wc-number',{
-        "formAction":"/v1/your-registration/choose-country"
+    res.render(folder+'/your-registration/wc-number',{
+        "formAction":"/"+folder+"/your-registration/choose-country"
     })
   })
 
   // Choose country ==============================================================
 
   router.get('/your-registration/choose-country', function (req, res) {
-    res.render('v1/your-registration/choose-country',{
-        "formAction":"/v1/your-registration/choose-country-check"
+    res.render(folder+'/your-registration/choose-country',{
+        "formAction":"/"+folder+"/your-registration/choose-country-check"
     })
   })
 
   router.post('/your-registration/choose-country', function (req, res) {
-    res.render('v1/your-registration/choose-country',{
-        "formAction":"/v1/your-registration/choose-country-check"
+    res.render(folder+'/your-registration/choose-country',{
+        "formAction":"/"+folder+"/your-registration/choose-country-check"
     })
   })
   
@@ -84,19 +84,19 @@ router.get('/your-registration/new-registration', function (req, res) {
   router.post('/your-registration/choose-country-check', function (req, res) {
   
     if (req.body['where-do-you-live']=="england") {
-        res.redirect("/v1/your-registration/you-can-register-in-england")
+        res.redirect("/"+folder+"/your-registration/you-can-register-in-england")
 
     } if(req.body['where-do-you-live']=="scotland") {
-        res.redirect("/v1/your-registration/you-can-register-in-scotland")
+        res.redirect("/"+folder+"/your-registration/you-can-register-in-scotland")
             
     } if(req.body['where-do-you-live']=="wales") {
-        res.redirect("/v1/your-registration/you-can-register-in-wales")
+        res.redirect("/"+folder+"/your-registration/you-can-register-in-wales")
    
     } if(req.body['where-do-you-live']=="northern-ireland") {
-        res.redirect("/v1/your-registration/you-can-register-in-northern-ireland")
+        res.redirect("/"+folder+"/your-registration/you-can-register-in-northern-ireland")
        
     } else {
-      res.redirect("/v1/your-registration/you-can-only-register-in-the-uk")
+      res.redirect("/"+folder+"/your-registration/you-can-only-register-in-the-uk")
     }
   })
   
