@@ -1,0 +1,143 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What type of business or organisation are you?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation2">
+          <h1 class="govuk-panel__title">
+            You must now pay by bank transfer
+
+          </h1>
+          <div class="govuk-panel__body">
+            Then email us your registration number:
+
+            <br><strong>HDJ2123F</strong>
+          </div>
+        </div>
+
+        <div class="govuk-inset-text">
+          We cannot register you until your payment clears.
+        </div>
+        <h2 class="govuk-heading-m">Bank details</h2>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Sort code</td>
+              <th scope="row" class="govuk-table__header">60-70-80</th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Account number</td>
+              <th scope="row" class="govuk-table__header">10014411</th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Payment reference</br><span style="color: grey;">We cannot complete your registration without this</span></td>
+              <th scope="row" class="govuk-table__header">CBDU130776</th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Payment due</td>
+              <th scope="row" class="govuk-table__header">£ 164.00
+              </th>
+            </tr>
+          </tbody>
+        </table>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Overseas payments
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+<p>IBAN:  GB23 NWBK 607080 10014411</br>
+  SWIFTBIC: NWBK GB2L</br>
+  Currency: Sterling</br>
+  </p>          </div>
+        </details>
+
+        <h2 class="govuk-heading-m">Email us your registration number CBDU130776 to confirm you’ve paid</h2>
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Email us</td>
+              <th scope="row" class="govuk-table__header">ea_fsc_ar@gov.sscl.com
+              </th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Payment reference</td>
+              <th scope="row" class="govuk-table__header">CBDU130776
+              </th>
+            </tr>
+
+          </tbody>
+        </table>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What to include when you email us
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+<p><span style="font-weight: bold">Email subject:</span></br>
+  Waste carriers payment confirmation CBDU130776
+</p>
+<p></p>
+  <span style="font-weight: bold">Email body:</span></br> 
+  Payment confirmation reference: CBDU130776
+  Date paid: 
+  Amount: £154.00
+  </p>          </div>
+        </details>
+
+        <p class="govuk-body">
+          We’ve sent an email to jane.applicant@email.com with the payment details and instructions.
+        </p>
+        <p class="govuk-body">
+          We will also send a receipt to the same email address once payment is received.
+        </p>
+
+
+
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>You’re not legally entitled to operate as a waste carrier until we have received your payment and confirmed your registration.</li>
+          <li>Please allow 5 working days for your payment to reach us.</li>
+          <li>Alternatively, contact us to pay by credit or debit card.</li>
+          </ul>
+          
+          <p>Contact the Environment Agency on  <a href="mailto:nccc-carrierbroker@environment-agency.gov.uk">nccc-carrierbroker@environment-agency.gov.uk</a> or 03708 506506 if you have questions or if your details change.</p>
+
+
+          <h3 class="govuk-heading-m">Registration checks</h3>
+          <p>
+            Waste carrier registrations are subject to checks. Deliberately providing false details, or not complying with carrier rules, can lead to de-registration and prosecution.
+            </p>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p>
+      </br>      </br>      </br>      </br>      </br>
+        <p><a href="/{{folder}}/wcr-magic-link/email-receipt">Testing link to email</a></p>
+
+      </div>
+
+
+</div>
+{% endblock %}
