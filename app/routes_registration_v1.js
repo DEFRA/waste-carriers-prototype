@@ -58,6 +58,33 @@ router.get('/your-registration/new-registration', function (req, res) {
     }
   })
 
+  // Choose payment ==============================================================
+
+  router.get('/your-registration/pay/choose-payment', function (req, res) {
+    res.render(folder+'/your-registration/pay/choose-payment',{
+        "formAction":"/"+folder+"/your-registration/pay/choose-payment-check"
+    })
+  })
+
+  router.post('/your-registration/pay/choose-payment', function (req, res) {
+    res.render(folder+'/your-registration/pay/choose-payment',{
+        "formAction":"/"+folder+"/your-registration/pay/choose-payment-check"
+    })
+  })
+  
+  // Route to check if application has started and redirect
+  router.post('/your-registration/pay/choose-payment-check', function (req, res) {
+  
+    if (req.body['choose-payment']=="bacs") {
+      res.redirect("/"+folder+"/your-registration/pay/bacs-confirm")
+    } else {
+      res.redirect("/"+folder+"/your-registration/pay/bacs-confirm")
+    }
+  })
+
+ 
+  
+
   // WCR number ==============================================================
 
   router.get('/your-registration/wc-number', function (req, res) {

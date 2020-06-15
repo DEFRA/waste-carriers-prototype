@@ -1,0 +1,98 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Payment summary
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+      <!--<a href="javascript:history.back();" class="govuk-back-link">Back</a>-->
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="{{formAction}}" method="post">
+
+      <h2 class="govuk-heading-l">Payment summary</h2>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Renewal of registration</th>
+            <td class="govuk-table__cell">£105.00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">2 registration cards</th>
+            <td class="govuk-table__cell">£10.00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Total charge</th>
+            <td class="govuk-table__cell">£115.00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td style="padding-top:10px">All charges are outside the scope of VAT.</th>
+          </tr>
+
+        </tbody>
+      </table>
+
+    <div class="govuk-form-group">
+<h3 class="govuk-heading-s">Make a payment</h3>
+
+      {{ govukRadios({
+        idPrefix: "choose-payment",
+        name: "choose-payment",
+fieldset: {
+  legend: {
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+items: [
+  {
+    value: "worldpay",
+    text: "Pay by credit or debit card",
+    hint: {
+      text: "You will be transferred to the secure WorldPay site. We accept MasterCard, Maestro and Visa."
+    }
+
+  },
+  {
+    value: "bacs",
+    text: "Pay by bank transfer and then email us to confirm payment",
+    hint: {
+      text: "You will be transferred to the secure WorldPay site. We accept MasterCard, Maestro and Visa."
+    }
+  }
+
+]
+}) }}
+
+</div>
+
+
+
+    <div class="govuk-form-group">
+      {{ govukButton({
+          text: "Proceed to payment"
+        }) }}
+    </div>
+
+  </form>
+
+  </div>
+</div>
+
+{% endblock %}
