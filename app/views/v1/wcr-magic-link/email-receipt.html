@@ -30,19 +30,39 @@
     </div>
 
 
-    <div class="govuk-grid-column-one-half">
+    <div class="govuk-grid-column-two-thirds">
 
       <p class="subject">
         Your payment has been received  <img class="inboxicon" src="{{ imgpath }}gmail_icon_inbox.png" alt="" />
       </p>
+    </div>
+      <div class="govuk-grid-column-one-quarter">
+        <div id="email_text">
+        <img src="{{ imgpath }}gmail_from_text.png" alt="" /> 
 
-      <p class="from">
-        <img src="{{ imgpath }}gmail_from_text.png" alt="" />
-      </p>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <div id="email_text">
+        <a href="/payment-reciept" target="_blank">
+       <img src="{{ imgpath }}pdf-icon.png" style="max-width: 80%;" alt="GOV.UK" />
+      </a>
+    </div>
+  </div>
+    
+    <div class="govuk-grid-column-two-thirds">
 
       <div id="email_text">
 
         <div id="banner" class="email-banner"><img src="{{ imgpath }}gov_uk_email_header.png" alt="GOV.UK" /></div>
+
+      </div
+    ></div>
+
+
+        <div class="govuk-grid-column-one-half">
+          <div id="email_text">
+
       </br>
 <p>Dear Chris Jones,</p>
         <h1 class="govuk-heading-m">
@@ -70,30 +90,33 @@
                        
         <h2 class="govuk-heading-s">Paid on 23 October 2020 by [bank transfer/card payment]</h2>
         <p>Payment reference: CBDU123456</p>
+        <div class="govuk-section-break govuk-section-break--visible"></div>
 
         <table class="govuk-table">
-          </thead>
-          <tbody style="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Cost of [registration/renewal]</td>
-              <td class="govuk-table__cell">£115.00</td>
+          
+          <tbody>
+             
+            <tr>
+              <td>Cost of [registration/renewal]</td>
+              <td>£115.00</td>
             </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Charge for changing carrier type</td>
-              <td class="govuk-table__cell">£40.00</td>
+            <tr>
+              <td style="padding-top: 10px;">Charge for changing carrier type</td>
+              <td style="padding-top: 10px;">£40.00</td>
             </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Cost of registration [card/s]</td>
-              <td class="govuk-table__cell">£5.00</td>
+            <tr>
+              <td style="padding-top: 10px;">Cost of registration [card/s]</td>
+              <td style="padding-top: 10px;">£5.00</td>
             </tr>
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><span style="font-weight: bold">Total paid</span> </br>VAT does not apply</th>
-              <td class="govuk-table__cell">£159.00</td>
-              </td>
+              <td style="padding-top: 10px;"><span style="font-weight: bold">Total paid</span></td>
+              <td style="padding-top: 10px;">£159.00</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">VAT does not apply</td>
             </tr>
           </tbody>
         </table>
+        <div class="govuk-section-break govuk-section-break--visible"></div>
 
           <p>If you have enquiries please contact the Environment Agency helpline 03708 506506.
           </p>
