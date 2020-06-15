@@ -1,0 +1,112 @@
+{% extends "layout_unbranded.html" %}
+
+{% set imgpath="/public/images/" %}
+
+{% block page_title %}
+  Gmail | Your payment has been received 
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block main %}
+
+
+<div id="email">
+
+<div id="gmail_header">
+  <img src="{{ imgpath }}gmail_header.png" alt="" />
+</div>
+
+<div class="govuk-grid-row">
+
+    <div style="width:15%" class="govuk-grid-column-one-quarter">
+        <img style="margin-bottom:600px" src="{{ imgpath }}gmail_menu_left.png" alt="" />
+    </div>
+
+
+    <div class="govuk-grid-column-one-half">
+
+      <p class="subject">
+        Your payment has been received  <img class="inboxicon" src="{{ imgpath }}gmail_icon_inbox.png" alt="" />
+      </p>
+
+      <p class="from">
+        <img src="{{ imgpath }}gmail_from_text.png" alt="" />
+      </p>
+
+      <div id="email_text">
+
+        <div id="banner" class="email-banner"><img src="{{ imgpath }}gov_uk_email_header.png" alt="GOV.UK" /></div>
+      </br>
+<p>Dear Chris Jones,</p>
+        <h1 class="govuk-heading-m">
+          Your payment has been received
+        </h1>
+
+        <p>A separate email will confirm your registration following any checks.</p>
+        <p>You’re not legally entitled to operate as a waste carrier until we have confirmed your registration.</p>
+        <p>Download the email attachment for a print version of the receipt.
+          </p>
+        <h2 class="govuk-heading-s">Receipt:</br>
+      </h2>
+      <p>Receipt for [registration/renewal] as a waste carrier, broker or dealer
+      </p>
+
+      
+      <p>Waste carrier registration number: CBDU123456</br></br>
+        Date: 23 October 2020</p>
+        </br>
+        <h2 class="govuk-heading-s">Business details:</br>
+        </h2>
+        <p>
+          Acme Really Long Business Name Limited
+          Acme House, Acme Trading Estate, Really Long Town Name, Newtown NN1 3WW</p>
+                       
+        <h2 class="govuk-heading-s">Paid on 23 October 2020 by [bank transfer/card payment]</h2>
+        <p>Payment reference: CBDU123456</p>
+
+        <table class="govuk-table">
+          </thead>
+          <tbody style="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Cost of [registration/renewal]</td>
+              <td class="govuk-table__cell">£115.00</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Charge for changing carrier type</td>
+              <td class="govuk-table__cell">£40.00</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Cost of registration [card/s]</td>
+              <td class="govuk-table__cell">£5.00</td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><span style="font-weight: bold">Total paid</span> </br>VAT does not apply</th>
+              <td class="govuk-table__cell">£159.00</td>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+          <p>If you have enquiries please contact the Environment Agency helpline 03708 506506.
+          </p>
+
+          <p>This is an automated email, please do not reply.</p>
+
+
+      </div><!-- // end #email_text -->
+
+    </div><!-- // end .column 3/4 -->
+
+  </div><!-- // end .grid_row -->
+
+</div><!-- // end #email -->
+
+{% endblock %}
