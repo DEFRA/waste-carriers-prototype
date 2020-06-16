@@ -81,8 +81,6 @@ router.get('/your-registration/new-registration', function (req, res) {
       res.redirect("/"+folder+"/your-registration/pay/bacs-confirm")
     }
   })
-
- 
   
 
   // WCR number ==============================================================
