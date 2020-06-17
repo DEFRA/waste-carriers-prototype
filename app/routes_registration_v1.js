@@ -48,7 +48,7 @@ router.get('/your-registration/new-registration', function (req, res) {
     })
   })
   
-  // Route to check if application has started and redirect
+  // Route to check if new application has started or is a renewal
   router.post('/your-registration/new-registration-check', function (req, res) {
   
     if (req.body['started']=="yes") {
@@ -72,7 +72,7 @@ router.get('/your-registration/new-registration', function (req, res) {
     })
   })
   
-  // Route to check if application has started and redirect
+  // Route to check if payment is bacs or card
   router.post('/your-registration/pay/choose-payment-check', function (req, res) {
   
     if (req.body['choose-payment']=="bacs") {
@@ -83,13 +83,6 @@ router.get('/your-registration/new-registration', function (req, res) {
   })
   
 
-  // WCR number ==============================================================
-
-  router.get('/your-registration/wc-number', function (req, res) {
-    res.render(folder+'/your-registration/wc-number',{
-        "formAction":"/"+folder+"/your-registration/choose-country"
-    })
-  })
 
   // Choose country ==============================================================
 
@@ -163,4 +156,48 @@ router.get('/your-registration/new-registration', function (req, res) {
   //    res.redirect("/"+folder+"/your-registration/registration-type")
   //  }
  // })
+
+ // Registration holder form action based on registration/renew status ==============================================================
+
+ 
+  router.get('/your-registration/registration-holder', function (req, res) {
+   if( req.session.data['started']=="yes" ){ // yes it's a new registration
+   res.render(folder+'/your-registration/registration-holder',{
+         "formAction":"/"+ folder + "/your-registration/registration-type"
+       })
+   } else {
+    res.render(folder+'/your-registration/registration-holder',{
+      "formAction":"/"+ folder + "/your-registration/do-you-carry-waste"
+       })
+   }
+ })
+
+  // Do you carry waste form action based on registration/renew status ==============================================================
+
+ 
+  router.get('/your-registration/do-you-carry-waste', function (req, res) {
+    if( req.session.data['started']=="yes" ){ // yes it's a new registration
+    res.render(folder+'/your-registration/do-you-carry-waste',{
+          "formAction":"/"+ folder + "/your-registration/operater-flow"
+        })
+    } else {
+     res.render(folder+'/your-registration/do-you-carry-waste',{
+       "formAction":"/"+ folder + "/your-registration/confirm-renewal-details"
+        })
+    }
+  })
+
+    // WCR number form action based on registration/renew status ==============================================================
+
+    router.get('/your-registration/wc-number', function (req, res) {
+      if( req.session.data['started']=="yes" ){ // yes it's a new registration
+      res.render(folder+'/your-registration/wc-number',{
+        "formAction":"/"+folder+"/your-registration/choose-country"
+      })
+    } else {
+      res.render(folder+'/your-registration/wc-number',{
+        "formAction":"/"+folder+"/your-registration/about-to-renew"
+    })
+  }
+})
 module.exports = router

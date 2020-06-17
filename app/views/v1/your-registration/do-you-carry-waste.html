@@ -1,0 +1,106 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you carry the waste?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form action="{{formAction}}" method="post">
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset">
+
+                              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                  Do you carry the waste?
+                                </h1>
+                              </legend>                     
+                    </fieldset>
+                  </br>
+
+                  <fieldset class="govuk-fieldset">
+
+              <div class="govuk-radios">
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="carry-waste" name="carry-waste" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="carry-waste">
+                        We carry the waste (carrier and dealer)
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="carry-waste" name="carry-waste" type="radio" value="outsourse">
+                      <label class="govuk-label govuk-radios__label" for="carry-waste">
+                        We arrange for others to carry it (broker and dealer)
+                      </label>
+                    </div>
+
+            </br>
+              <p>or</p>
+
+
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="carry-waste" name="carry-waste" type="radio" value="both">
+                  <label class="govuk-label govuk-radios__label" for="carry-waste">
+                    We do both (carrier, broker and dealer)
+                  </label>
+                </div>
+
+          </div>             
+
+          </fieldset>
+
+        </br>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What is a carrier, broker or dealer?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+
+
+      <p>Your carrier type can include any or all of the below:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>carriers transport commercial, industrial and household waste, known as controlled waste, as part of their business</li>
+        <li>brokers arrange for other businesses' controlled waste to be handled, transported, disposed of or recovered</li>
+        <li>dealers buy and sell waste, either for their own business or on behalf of another organisation</li>
+      </ul>
+      <p>You should select the option that covers all of your activities (for example, carrier-dealer or carrier-broker-dealer) even if you rarely do some of them (for example, you are usually a carrier but occasionally arrange for someone else to carry waste for you).</p>
+</div>
+          </details>
+        </div>
+           <br/>
+
+            <div class="govuk-form-group">
+              {{ govukButton({
+                  text: "Continue"
+                }) }}
+            </div>
+
+      </form>
+      
+    </div>
+  </div>
+
+{% endblock %}
