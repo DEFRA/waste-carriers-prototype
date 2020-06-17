@@ -178,7 +178,7 @@ router.get('/your-registration/new-registration', function (req, res) {
   router.get('/your-registration/do-you-carry-waste', function (req, res) {
     if( req.session.data['started']=="yes" ){ // yes it's a new registration
     res.render(folder+'/your-registration/do-you-carry-waste',{
-          "formAction":"/"+ folder + "/your-registration/operater-flow"
+          "formAction":"/"+ folder + "/your-registration/do-you-carry-waste"
         })
     } else {
      res.render(folder+'/your-registration/do-you-carry-waste',{
@@ -200,4 +200,31 @@ router.get('/your-registration/new-registration', function (req, res) {
     })
   }
 })
+
+
+    // Registration type form action based on tier status ==============================================================
+
+    router.get('/your-registration/registration-type', function (req, res) {
+      res.render(folder+'/your-registration/registration-type',{
+        "formAction":"/"+folder+"/your-registration/registration-type-check"
+    })
+  })
+
+  router.post('/your-registration/registration-type', function (req, res) {
+    res.render(folder+'/your-registration/registration-type',{
+        "formAction":"/"+folder+"/your-registration/registration-type-check"
+    })
+  })
+  
+  // Route to check if payment is bacs or card
+  router.post('/your-registration/registration-type-check', function (req, res) {
+  
+    if (req.body['tier']=="help-decide-tier") {
+      res.redirect("/"+folder+"/your-registration/registration-type")
+    } else {
+      res.redirect("/"+folder+"/your-registration/register-tier-details")
+    }
+  })
+  
+
 module.exports = router

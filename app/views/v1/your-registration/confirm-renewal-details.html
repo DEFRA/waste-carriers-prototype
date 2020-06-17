@@ -18,13 +18,13 @@ Confirmation of your renewal so far
       <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
 {% block content %}
+{% import folder+"/custom_inc/macros.html" as macros %}
 
-
-
+{# permit|dump #}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/{{folder}}/your-registration/done/bacs-confirm" method="post">
+    <!--<form action="/{{folder}}/your-registration/done/bacs-confirm" method="post">-->
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -32,15 +32,15 @@ Confirmation of your renewal so far
             Confirmation of your renewal so far
           </h1>
         </legend>
-      
-        <p>Based on what you've told us so far, you still need [an upper / a lower] tier registration.</p>
-        <p>The renewal charge for CBDU12345 will be £105.</p>
-        <p>Your carrier type has not changed, so there is no extra charge.</p>
+      </br>
+        <p>Based on what you've told us so far, you still need an upper tier registration.</p>
+        <p>The renewal charge for CBDU130776 will be £105.</p>
+        <!--<p>Your carrier type has not changed, so there is no extra charge.</p>-->
         <p>Because your carrier type has changed, there will also be a £40 charge.</p>
-        <p>The total charge to renew CBDU12345 is £105.</p>
+        <p>The total charge to renew CBDU130776 is £145.</p>
       
       </fieldset>
-
+    </br>
 
     <div class="govuk-form-group">
       {{ govukButton({
