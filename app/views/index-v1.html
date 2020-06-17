@@ -33,7 +33,11 @@ Waste carrier or broker prototype
           </ul>
 
           <ul class="govuk-list govuk-list--bullet">
-            {{ macros.list( "WCR renewal payment receipt", "/v1/your-registration/done/bacs-confirm" ) }}
+            {{ macros.list( "WCR renewal BACS payment receipt", "/v1/your-registration/done/bacs-confirm" ) }}
+          </ul>
+
+          <ul class="govuk-list govuk-list--bullet">
+            {{ macros.list( "WCR renewal card payment receipt", "/v1/your-registration/done/worldpay-confirm" ) }}
           </ul>
 
           <ul class="govuk-list govuk-list--bullet">

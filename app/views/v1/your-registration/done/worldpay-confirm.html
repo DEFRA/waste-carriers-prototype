@@ -1,0 +1,65 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What type of business or organisation are you?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  alpha
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Registration complete
+          </h1>
+          <div class="govuk-panel__body">
+            Your registration number is
+
+            <br><strong>CBDU130776</strong>
+          </div>
+        </div>
+
+        <p>We’ve sent a registration confirmation and certificate to <a href="mailto:user@example.com">user@example.com</a>.</p>
+        <p> We will also send a receipt to the same email address once your payment has processed.</p>
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Your organisation's details will appear on the public register within 5 days.</li>
+          <li>We will contact you on this email address before this registration is due to expire in September 2023.</li>
+          <li>If we cannot reach you when the renewal is due, you’ll have to pay more for a new upper tier registration.</li>
+          
+          </ul>
+          
+          <p>Contact the Environment Agency on  <a href="mailto:nccc-carrierbroker@environment-agency.gov.uk">nccc-carrierbroker@environment-agency.gov.uk</a> or 03708 506506 if you have questions or if your details change.</p>
+
+
+          <h3 class="govuk-heading-m">Registration checks</h3>
+          <p>
+            Waste carrier registrations are subject to checks. Deliberately providing false details, or not complying with carrier rules, can lead to de-registration and prosecution.
+            </p>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p>
+      </br>      </br>      </br>      </br>      </br>
+
+        <p><a href="/{{folder}}/wcr-magic-link/email-receipt" target="_blank">Testing link to payment received email</a></p>
+
+      </div>
+
+
+</div>
+{% endblock %}
