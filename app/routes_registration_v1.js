@@ -78,7 +78,7 @@ router.get('/your-registration/new-registration', function (req, res) {
     if (req.body['choose-payment']=="bacs") {
       res.redirect("/"+folder+"/your-registration/pay/bacs-confirm")
     } else {
-      res.redirect("/"+folder+"/your-registration/pay/bacs-confirm")
+      res.redirect("/"+folder+"/your-registration/done/worldpay-confirm")
     }
   })
   
