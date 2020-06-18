@@ -226,5 +226,10 @@ router.get('/your-registration/new-registration', function (req, res) {
     }
   })
   
+// set up dummy data
+router.get('/test', function (req, res) {
+  req.session.data = { permitoperation: 'mcp-standard' }
+  res.redirect(`/${folder}/your-registration/do-you-carry-waste`)
+})
 
 module.exports = router
