@@ -37,39 +37,63 @@ Waste carrier or broker prototype
           <h2 class="govuk-heading-m">
             Current research
           </h2>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/{{versionxxx}}/wcr-magic-link/email-renew" target="_blank">WCR magic link renewal</a> <span style="margin-top:12pt;margin-bottom:0pt;border-left:8px">/v1/wcr-magic-link/email-renew</span></li>
-          </ul>
+          <h3 class="govuk-heading-s">
+            Letters
+          </h3>
           <ul class="govuk-list govuk-list--bullet"> 
-            <li><a href="https://waste-carriers.herokuapp.com/public/images/magic-link-v2.pdf" target="_blank" download="Renewal letter magic link v2">Renewal letter magic link v2</a> https://waste-carriers.herokuapp.com/public/images/magic-link-v2.pdf</li>
-          </ul>          <ul class="govuk-list govuk-list--bullet"> 
-            <li><a href="https://waste-carriers.herokuapp.com/public/images/qr-code-v2.pdf" target="_blank" download="Renewal letter QR v2">Renewal letter QR v2</a> https://waste-carriers.herokuapp.com/public/images/qr-code-v2.pdf</li>
+            <li><a href="https://waste-carriers.herokuapp.com/public/images/magic-link-v2.pdf" target="_blank" download="Renewal letter magic link v2">Renewal letter magic link v2</a> </li>
+          </ul>          
+          <ul class="govuk-list govuk-list--bullet"> 
+            <li><a href="https://waste-carriers.herokuapp.com/public/images/qr-code-v2.pdf" target="_blank" download="Renewal letter QR v2">Renewal letter QR v2</a> </li>
           </ul>     
+
+          <h3 class="govuk-heading-s">
+            Renewal magic link - inc first 6 pages
+          </h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/{{versionxxx}}/wcr-magic-link/email-renew" target="_blank">WCR magic link renewal</a> </li>
+          </ul>
+
+          <h3 class="govuk-heading-s">
+            Registration - full build in progess
+          </h3>
           <ul class="govuk-list govuk-list--bullet"> 
-            <li><a href="https://waste-carriers.herokuapp.com/public/images/magic-link.pdf" target="_blank" download="Renewal letter magic link">Renewal letter magic link</a> https://waste-carriers.herokuapp.com/public/images/magic-link.pdf</li>
-          </ul>
-          <ul class="govuk-list govuk-list--bullet">    
-            <li><a href="https://waste-carriers.herokuapp.com/public/images/redirect.pdf" target="_blank" download="Renewal letter redirect">Renewal letter redirect</a> https://waste-carriers.herokuapp.com/public/images/redirect.pdf</li>
-          </ul>
-          <ul class="govuk-list govuk-list--bullet"> 
-            <li><a href="https://waste-carriers.herokuapp.com/public/images/qr-code.pdf" target="_blank" download="Renewal letter redirect and QR cod">Renewal letter redirect and QR code</a> https://waste-carriers.herokuapp.com/public/images/qr-code.pdf</li>
-          </ul>
-          <ul class="govuk-list govuk-list--bullet">
-            {{ macros.list( "WCR registration", "/v1/your-registration/start-page" ) }}
-          </ul>
-
-          <ul class="govuk-list govuk-list--bullet">
-            {{ macros.list( "WCR renewal BACS payment receipt", "/v1/your-registration/done/bacs-confirm" ) }}
-          </ul>
-
-          <ul class="govuk-list govuk-list--bullet">
-            {{ macros.list( "WCR renewal card payment receipt", "/v1/your-registration/done/worldpay-confirm" ) }}
-          </ul>
-
-          <ul class="govuk-list govuk-list--bullet">
-            {{ macros.list( "BACS renewal from payment summary", "/v1/your-registration/pay/choose-payment" ) }}
+            <li><a href="/{{versionxxx}}/your-registration/start-page">WCR registration</a></li>
           </ul>
           
+
+          <h3 class="govuk-heading-s">
+            Payment flows
+          </h3>
+
+          <ul class="govuk-list govuk-list--bullet"> 
+            <li><a href="/{{versionxxx}}/your-registration/done/worldpay-confirm">WCR renewal card payment receipt, from 'done' page</a></li>
+          </ul>
+
+          <ul class="govuk-list govuk-list--bullet"> 
+            <li><a href="/{{versionxxx}}/your-registration/pay/choose-payment">BACS renewal from payment summary</a></li>
+          </ul>
+          
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <!-- ########################################################################### -->
+    
+          <h2 class="govuk-heading-m">
+            Previous letter versions
+          </h2>
+
+          <h3 class="govuk-heading-s">
+Version 1          </h3>
+
+          <ul class="govuk-list govuk-list--bullet"> 
+            <li><a href="https://waste-carriers.herokuapp.com/public/images/magic-link.pdf" target="_blank" download="Renewal letter magic link">Renewal letter magic link</a></li>
+          </ul>
+          <ul class="govuk-list govuk-list--bullet">    
+            <li><a href="https://waste-carriers.herokuapp.com/public/images/redirect.pdf" target="_blank" download="Renewal letter redirect">Renewal letter redirect</a> </li>
+          </ul>
+          <ul class="govuk-list govuk-list--bullet"> 
+            <li><a href="https://waste-carriers.herokuapp.com/public/images/qr-code.pdf" target="_blank" download="Renewal letter redirect and QR cod">Renewal letter redirect and QR code</a></li>
+          </ul>
+
 
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           <!-- ########################################################################### -->
