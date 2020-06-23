@@ -178,7 +178,7 @@ router.get('/your-registration/new-registration', function (req, res) {
   router.get('/your-registration/do-you-carry-waste', function (req, res) {
     if( req.session.data['started']=="yes" ){ // yes it's a new registration
     res.render(folder+'/your-registration/do-you-carry-waste',{
-          "formAction":"/"+ folder + "/your-registration/do-you-carry-waste"
+          "formAction":"/"+ folder + "/your-registration/comp-no"
         })
     } else {
      res.render(folder+'/your-registration/do-you-carry-waste',{
