@@ -1,0 +1,83 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What’s the contact email address?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+      {% endblock %}
+      {% block content %}
+      {% import folder+"/custom_inc/macros.html" as macros %}
+      
+      {# permit|dump #}
+      
+      {% set appType = 'tier' %}
+      {% if permit.tier=="upper-tier" %}
+          {% set appType = 'upper-tier' %}
+      {% endif %}
+      
+      {% set appType = 'tier' %}
+      {% if permit.tier=="lower-tier" %}
+          {% set appType = 'lower-tier' %}
+      {% endif %}
+      
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        What’s the contact email address?
+      </legend>
+
+      <form action="/{{folder}}/your-registration/reg-contact-address-postcode" method="post">
+
+        </br>
+        {% if permit.tier=="upper-tier" %}
+        
+      <p>We will contact you on this email address when your registration is due to be renewed.</p>
+
+      <p>If we cannot reach you, you’ll have to pay more for a new registration.</p>
+
+      <p>Contact the Environment Agency if your email address changes after you register. We’ll include our contact details in the confirmation email we’ll send you.</p>
+      <p>If you’re registering on behalf of someone else, provide their contact details and not yours.</p>
+</br>
+      {% endif %}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contactEmail">Email address</br>
+            <span class="govuk-hint">We’ll send emails about this registration to this address</span>
+            </label>
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="contactEmail" name="contactEmail" />
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="conf_email_reg-contact">Confirm email address</br>
+            </label>
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="contactEmail" name="contactEmail"/>
+        </div>
+
+          
+
+</br>
+<div class="govuk-form-group">
+  {{ govukButton({
+      text: "Continue"
+    }) }}
+</div>
+
+</form>
+  
+</div>
+</div>
+
+{% endblock %}

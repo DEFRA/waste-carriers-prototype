@@ -225,6 +225,32 @@ router.get('/your-registration/new-registration', function (req, res) {
       res.redirect("/"+folder+"/your-registration/register-tier-details")
     }
   })
+
+// Convictions routing based on yes/no
+
+
+router.get('/your-registration/convictions', function (req, res) {
+  res.render(folder+'/your-registration/convictions',{
+    "formAction":"/"+folder+"/your-registration/convictions-check"
+})
+})
+
+router.post('/your-registration/convictions', function (req, res) {
+res.render(folder+'/your-registration/convictions',{
+    "formAction":"/"+folder+"/your-registration/convictions-check"
+})
+})
+
+// Route to check if payment is bacs or card
+router.post('/your-registration/convictions-check', function (req, res) {
+
+if (req.body['convictions']=="yes") {
+  res.redirect("/"+folder+"/your-registration/conviction-details")
+} else {
+  res.redirect("/"+folder+"/your-registration/reg-contact")
+}
+})
+
   
 // set up dummy data
 router.get('/test', function (req, res) {

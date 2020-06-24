@@ -1,0 +1,107 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What's the company address?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+      {% endblock %}
+      {% block content %}
+      {% import folder+"/custom_inc/macros.html" as macros %}
+      
+      {# permit|dump #}
+      
+      {% set appType = 'tier' %}
+      {% if permit.tier=="upper-tier" %}
+          {% set appType = 'upper-tier' %}
+      {% endif %}
+      
+      {% set appType = 'tier' %}
+      {% if permit.tier=="lower-tier" %}
+          {% set appType = 'lower-tier' %}
+      {% endif %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        What's the company address?
+      </legend>
+
+      {% if permit.tier=="upper-tier" %}
+      <form action="/{{folder}}/your-registration/director-details" method="post">
+      {% endif %}
+
+      {% if permit.tier=="lower-tier" %}
+      <form action="/{{folder}}/your-registration/reg-contact" method="post">
+        {% endif %}
+
+<p>
+<span class="postcode-prefix">Postcode:</span><br/>
+<span class="postcode" style="font-weight: bold;">BS1 5AH</span>
+<a href="/{{folder}}/address/postcode">
+  Change<span class="visuallyhidden"> postcode</span>
+</a>
+</p>
+
+<fieldset class="govuk-fieldset">
+<legend id="manual-address" class="govuk-visually-hidden">Site address</legend>
+
+<div class="govukform-group">
+  <label class="govuk-label" for="the_address">Address</label>
+  <select class="govuk-select form-control form-control-char-auto" id="the_address" aria-describedby="manual_hint" name="compAddress">
+    <option value="">15 addresses found</option>
+    <option value="3, GRANGE ROAD, BRISTOL">3, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="5, GRANGE ROAD, BRISTOL">5, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="7, GRANGE ROAD, BRISTOL">7, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="9a, GRANGE ROAD, BRISTOL">9a, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="9b, GRANGE ROAD, BRISTOL">9b, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="10, GRANGE ROAD, BRISTOL">10, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="11, GRANGE ROAD, BRISTOL">11, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="12, GRANGE ROAD, BRISTOL">12, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="13, GRANGE ROAD, BRISTOL">13, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="15, GRANGE ROAD, BRISTOL">15, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="17, GRANGE ROAD, BRISTOL">17, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="Flat 1, 19, GRANGE ROAD, BRISTOL">Flat 1, 19, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="Flat 2, 19, GRANGE ROAD, BRISTOL">Flat 2, 19, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="21, GRANGE ROAD, BRISTOL">21, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="22, GRANGE ROAD, BRISTOL">22, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+    <option value="19, GRANGE ROAD, BRISTOL">19, GRANGE ROAD, BRISTOL, BS1 5AH</option>
+  </select>
+</div>
+</br>
+<p id="manual_hint">
+  <a href="/{{folder}}/your-registration/address-manual">
+  <span class="govuk-visually-hidden">Enter address manually</span> 
+  I cannot find the address in the list</a>
+</p>
+
+</fieldset>
+</br>
+<div class="govuk-form-group">
+  {{ govukButton({
+      text: "Continue"
+    }) }}
+</div>
+
+<hr>
+<p class="text font-xsmall" id="os-notice">
+© Crown copyright and database rights 2018 Ordnance Survey 100024198. Use of this addressing data is subject to the <a target="_blank" rel="noopener noreferrer" href="/v24/address/os_place_terms">terms and conditions (opens new window)</a>.
+</p>
+</form>
+  
+</div>
+</div>
+
+{% endblock %}

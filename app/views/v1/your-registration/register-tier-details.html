@@ -36,8 +36,9 @@ You need to register as a lower tier waste carrier
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% if permit.tier=="upper-tier" %}
     <form action="/{{folder}}/your-registration/do-you-carry-waste" method="post">
-{% if permit.tier=="upper-tier" %}
+
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
@@ -50,6 +51,8 @@ You need to register as a lower tier waste carrier
 {% endif %}
 
 {% if permit.tier=="lower-tier" %}
+<form action="/{{folder}}/your-registration/comp-no" method="post">
+
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
             You need to register as a lower tier waste carrier

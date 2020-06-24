@@ -1,0 +1,61 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What’s the contact telephone number?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+      {% endblock %}
+      {% block content %}
+      
+      {# permit|dump #}
+      
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        What’s the contact telephone number?
+      </legend>
+
+      <form action="/{{folder}}/your-registration/reg-contact-email" method="post">
+
+        <div class="form-group">
+        </br>
+        
+      
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contactTel">Telephone number</br>
+            <span class="govuk-hint">This can be a landline or mobile</span>
+            </label>
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="contactTel" name="contactTel"/>
+        </div>
+
+
+        </div>
+          
+
+</br>
+<div class="govuk-form-group">
+  {{ govukButton({
+      text: "Continue"
+    }) }}
+</div>
+
+</form>
+  
+</div>
+</div>
+
+{% endblock %}
