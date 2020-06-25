@@ -79,20 +79,30 @@ Check your answers
         <p>The charge for this is £154, which will register you for 3 years.</p>
         {% endif %}
         {% endif %}
+    </br>
+        <hr>
+      </br>
+
         <h2 class="govuk-heading-m">You told us:</h2>
 
         <ul class="govuk-list govuk-list--bullet">
           <li>you are a limited company</li>
+
+          {% if permit.started=="no" %}
           <li>your registration number is CBDU130776</li>
+          {% endif %}
+
           <li>your principal place of business is in England</li>
+             <!-- 
           {% if permit.tier=="upper-tier" %}
           <li>you do deal with waste from other businesses or households</li>
           <li>you do deal with construction or demolition waste</li>
           {% endif %}
-          {% if permit.tier=="lower-tier" %}
-          <li>you do not deal with waste from other businesses or households</li>
+
+        {% if permit.tier=="lower-tier" %}
+        <li>you do not deal with waste from other businesses or households</li>
           <li>you do not deal with construction or demolition waste</li>
-          {% endif %}
+          {% endif %}-->
         </ul>
 
 <hr>
@@ -118,7 +128,8 @@ Check your answers
         <h2 class="govuk-heading-m">Business</h2>
         <p>{{permit.companyName}}</br>
           {{permit.compAddress}}</br>
-          {{permit.companyPost}}</br></p>     
+          {{permit.companyPost}}</br>
+        {{permit.companyNumber}}</p>     
     </br>
     <hr>
   </br>

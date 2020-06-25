@@ -1,9 +1,22 @@
 
 {% extends "layout.html" %}
 
+{% set appType = 'tier' %}
+{% if permit.tier=="upper-tier" %}
+    {% set appType = 'upper-tier' %}
+{% endif %}
+
+{% set appType = 'tier' %}
+{% if permit.tier=="lower-tier" %}
+    {% set appType = 'lower-tier' %}
+{% endif %}
+
+{% if permit.tier=="upper-tier" %}
 {% block pageTitle %}
-You need to register as a lower tier waste carrier
+You need to register as a upper tier waste carrier
 {% endblock %}
+{% endif %}
+
 
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -22,16 +35,6 @@ You need to register as a lower tier waste carrier
 {% import folder+"/custom_inc/macros.html" as macros %}
 
 {# permit|dump #}
-
-{% set appType = 'tier' %}
-{% if permit.tier=="upper-tier" %}
-    {% set appType = 'upper-tier' %}
-{% endif %}
-
-{% set appType = 'tier' %}
-{% if permit.tier=="lower-tier" %}
-    {% set appType = 'lower-tier' %}
-{% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
