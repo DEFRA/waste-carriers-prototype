@@ -44,8 +44,14 @@
     </div>
     <div class="govuk-grid-column-one-quarter">
       <div id="email_text">
+        {% if permit.started=="no" %}
         <a href="https://waste-carriers.herokuapp.com{{ imgpath }}payment-receipt.pdf" target="_blank" download="Payment receipt">
-         
+        {% endif %}
+        {% if permit.started=="yes" %}
+        <a href="https://waste-carriers.herokuapp.com{{ imgpath }}BACSreceiptreg.pdf" target="_blank" download="Payment receipt">
+        {% endif %}
+
+      
        <img src="{{ imgpath }}pdf-icon.png" style="max-width: 80%;" alt="GOV.UK" />
       </a>
     </div>
@@ -95,27 +101,46 @@
 
         <table class="govuk-table">
           
-          <tbody>
-             
-            <tr>
-              <td>Cost of renewal</td>
-              <td>£105.00</td>
-            </tr>
-            <tr>
-              <td style="padding-top: 10px;">Charge for changing carrier type</td>
-              <td style="padding-top: 10px;">£40.00</td>
-            </tr>
-            <tr>
-              <td style="padding-top: 10px;">Cost of registration card</td>
-              <td style="padding-top: 10px;">£5.00</td>
-            </tr>
-              <td style="padding-top: 10px;"><span style="font-weight: bold">Total paid</span></td>
-              <td style="padding-top: 10px;">£150.00</td>
-            </tr>
-            <tr>
-              <td style="padding-top: 10px;">VAT does not apply</td>
-            </tr>
-          </tbody>
+
+            <tbody>
+              {% if permit.started=="no" %}
+              <tr>
+                <td>Cost of renewal</td>
+                <td>£105.00</td>
+              </tr>
+              <tr>
+                <td style="padding-top: 10px;">Charge for changing carrier type</td>
+                <td style="padding-top: 10px;">£40.00</td>
+              </tr>
+              <tr>
+                <td style="padding-top: 10px;">Cost of registration card</td>
+                <td style="padding-top: 10px;">£5.00</td>
+              </tr>
+                <td style="padding-top: 10px;"><span style="font-weight: bold">Total paid</span></td>
+                <td style="padding-top: 10px;">£150.00</td>
+              </tr>
+              <tr>
+                <td style="padding-top: 10px;">VAT does not apply</td>
+              </tr>
+              {% endif %}
+              {% if permit.started=="yes" %}
+  
+              <tr>
+                <td>Cost of registration</td>
+                <td>£105.00</td>
+              </tr>
+              <tr>
+                <td style="padding-top: 10px;">Cost of registration card</td>
+                <td style="padding-top: 10px;">£5.00</td>
+              </tr>
+                <td style="padding-top: 10px;"><span style="font-weight: bold">Total paid</span></td>
+                <td style="padding-top: 10px;">£110.00</td>
+              </tr>
+              <tr>
+                <td style="padding-top: 10px;">VAT does not apply</td>
+              </tr>
+            {% endif %}
+            </tbody>
         </table>
         <div class="govuk-section-break govuk-section-break--visible"></div>
 

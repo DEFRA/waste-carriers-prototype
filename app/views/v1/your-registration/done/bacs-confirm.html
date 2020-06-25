@@ -19,6 +19,17 @@ What type of business or organisation are you?
 {% endblock %}
 {% block content %}
 
+{# permit|dump #}
+
+{% set appType = 'started' %}
+{% if permit.tier=="yes" %}
+    {% set appType = 'yes' %}
+{% endif %}
+{% set appType = 'started' %}
+{% if permit.tier=="no" %}
+    {% set appType = 'no' %}
+{% endif %}
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-panel govuk-panel--confirmation2">
@@ -53,7 +64,13 @@ What type of business or organisation are you?
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Payment due</td>
+              {% if permit.started=="no" %}
               <th scope="row" class="govuk-table__header">£ 150.00
+              {% endif %}
+              {% if permit.started=="yes" %}
+              <th scope="row" class="govuk-table__header">£ 110.00
+                {% endif %}
+
               </th>
             </tr>
           </tbody>
@@ -103,7 +120,12 @@ What type of business or organisation are you?
   <span style="font-weight: bold">Email body:</span></br> 
   Payment confirmation reference: CBDU130776</br>
   Date paid: </br>
+  {% if permit.started=="no" %}
   Amount: £150.00
+  {% endif %}
+              {% if permit.started=="yes" %}
+  Amount: £110.00
+  {% endif %}
   </p>          </div>
         </details>
 

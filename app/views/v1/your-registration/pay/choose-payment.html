@@ -19,14 +19,23 @@ Payment summary
 {% endblock %}
 {% block content %}
 
+{# permit|dump #}
 
-
+{% set appType = 'started' %}
+{% if permit.tier=="yes" %}
+    {% set appType = 'yes' %}
+{% endif %}
+{% set appType = 'started' %}
+{% if permit.tier=="no" %}
+    {% set appType = 'no' %}
+{% endif %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <form action="{{formAction}}" method="post">
 
       <h2 class="govuk-heading-l">Payment summary</h2>
+      {% if permit.started=="no" %}
 
       <table class="govuk-table">
         <tbody class="govuk-table__body">
@@ -52,6 +61,31 @@ Payment summary
 
         </tbody>
       </table>
+      {% endif %}
+      {% if permit.started=="yes" %}
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Initial registration</th>
+            <td class="govuk-table__cell">£105.00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1 registration card</th>
+            <td class="govuk-table__cell">£5.00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Total charge</th>
+            <td class="govuk-table__cell">£110.00</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td style="padding-top:10px">All charges are outside the scope of VAT.</th>
+          </tr>
+
+        </tbody>
+      </table>
+      {% endif %}
+
 
     <div class="govuk-form-group">
 <h3 class="govuk-heading-s">Make a payment</h3>
