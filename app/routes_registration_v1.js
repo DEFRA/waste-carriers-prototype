@@ -222,7 +222,7 @@ router.get('/your-registration/new-registration', function (req, res) {
     if (req.body['tier']=="help-decide-tier") {
       res.redirect("/"+folder+"/your-registration/registration-type")
     } else {
-      res.redirect("/"+folder+"/your-registration/register-tier-details")
+      res.redirect("/"+folder+"/your-registration/do-you-carry-waste")
     }
   })
 
