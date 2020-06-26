@@ -175,8 +175,8 @@ textarea {
 
 
 #worldpay-card-details{
-	background-image:url('/public/images/worldpay/worldpay-card-details-bg.gif');
-	height:1100px;
+	background-image:url('/public/images/worldpay/worldpay_new.jpg');
+	height:650px;
 	width:764px;
 	margin:0 auto 40px auto;
 	position: relative;
@@ -203,8 +203,8 @@ textarea {
 
 #worldpay-pay-button{
 	position:absolute;
-	top:905px;
-	left:655px;
+	top:475px;
+	left:635px;
 	margin:0;
 	padding:0;
 	}
@@ -215,7 +215,9 @@ textarea {
 	width:764px;
 	margin:0 auto 40px auto;
 	position: relative;
-	}
+  }
+  
+
 
 #worldpay-continue-button{
 	position:absolute;
