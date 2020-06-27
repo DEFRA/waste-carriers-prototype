@@ -2,16 +2,16 @@
 {% extends "layout.html" %}
 
 {% set appType = 'tier' %}
-{% if permit.tier=="upper-tier" %}
-    {% set appType = 'upper-tier' %}
+{% if permit.tier=="upperTier" %}
+    {% set appType = 'upperTier' %}
 {% endif %}
 
 {% set appType = 'tier' %}
-{% if permit.tier=="lower-tier" %}
-    {% set appType = 'lower-tier' %}
+{% if permit.tier=="lowerTier" %}
+    {% set appType = 'lowerTier' %}
 {% endif %}
 
-{% if permit.tier=="upper-tier" %}
+{% if permit.tier=="upperTier" %}
 {% block pageTitle %}
 You need to register as a upper tier waste carrier
 {% endblock %}
@@ -39,7 +39,7 @@ You need to register as a upper tier waste carrier
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if permit.tier=="upper-tier" %}
+    {% if permit.tier=="upperTier" %}
     <form action="/{{folder}}/your-registration/do-you-carry-waste" method="post">
 
       <fieldset class="govuk-fieldset">
@@ -53,7 +53,7 @@ You need to register as a upper tier waste carrier
         </p>
 {% endif %}
 
-{% if permit.tier=="lower-tier" %}
+{% if permit.tier=="lowerTier" %}
 <form action="/{{folder}}/your-registration/comp-no" method="post">
 
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">

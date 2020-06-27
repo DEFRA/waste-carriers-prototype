@@ -23,13 +23,13 @@ What's the company address?
 {# permit|dump #}
 
 {% set appType = 'tier' %}
-{% if permit.tier=="upper-tier" %}
-    {% set appType = 'upper-tier' %}
+{% if permit.tier=="upperTier" %}
+    {% set appType = 'upperTier' %}
 {% endif %}
 
 {% set appType = 'tier' %}
-{% if permit.tier=="lower-tier" %}
-    {% set appType = 'lower-tier' %}
+{% if permit.tier=="lowerTier" %}
+    {% set appType = 'lowerTier' %}
 {% endif %}
 
 
@@ -41,11 +41,11 @@ What's the company address?
         </legend>
 
 
-        {% if permit.tier=="upper-tier" %}
+        {% if permit.tier=="upperTier" %}
         <form action="/{{folder}}/your-registration/director-details" method="post">
         {% endif %}
   
-        {% if permit.tier=="lower-tier" %}
+        {% if permit.tier=="lowerTier" %}
         <form action="/{{folder}}/your-registration/reg-contact" method="post">
           {% endif %}
   

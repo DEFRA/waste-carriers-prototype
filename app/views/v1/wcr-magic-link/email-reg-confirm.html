@@ -18,12 +18,12 @@
 {% block main %}
 
 {% set appType = 'tier' %}
-{% if permit.tier=="upper-tier" %}
-    {% set appType = 'upper-tier' %}
+{% if permit.tier=="upperTier" %}
+    {% set appType = 'upperTier' %}
 {% endif %}
 {% set appType = 'tier' %}
-{% if permit.tier=="lower-tier" %}
-    {% set appType = 'lower-tier' %}
+{% if permit.tier=="lowerTier" %}
+    {% set appType = 'lowerTier' %}
 {% endif %}
 
 <div id="email">
@@ -41,14 +41,14 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      {% if permit.tier=="upper-tier" %}
+      {% if permit.tier=="upperTier" %}
       <p class="subject">
         You're now registered as an upper tier waste carrier, broker and dealer
   <img class="inboxicon" src="{{ imgpath }}gmail_icon_inbox.png" alt="" />
       </p>
       {% endif %}
 
-      {% if permit.tier=="lower-tier" %}
+      {% if permit.tier=="lowerTier" %}
       <p class="subject">
         You're now registered as a lower tier waste carrier, broker and dealer
   <img class="inboxicon" src="{{ imgpath }}gmail_icon_inbox.png" alt="" />
@@ -90,12 +90,12 @@
         <div class="govuk-grid-column-one-half">
         </br></br>
           <div class="govuk-panel govuk-panel--confirmation3">
-            {% if permit.tier=="upper-tier" %}
+            {% if permit.tier=="upperTier" %}
             <h1 class="govuk-panel__title">
               You are now registered as an upper tier waste carrier, broker and dealer
             </h1>
             {% endif %}
-            {% if permit.tier=="lower-tier" %}
+            {% if permit.tier=="lowerTier" %}
             <h1 class="govuk-panel__title">
               You are now registered as a lower tier waste carrier, broker and dealer
             </h1>
@@ -115,7 +115,7 @@
 <p>{{permit.contactFirstName}} 
   {{permit.contactLastName}},</p>
 
-  {% if permit.tier=="upper-tier" %}
+  {% if permit.tier=="upperTier" %}
 
         <p>Based on what you told us about your organisation and what it does, we have registered you as an an upper tier waste carrier, broker and dealer.</p>
         <p>Being an an upper tier waste carrier, broker and dealer means that:</p>
@@ -140,7 +140,7 @@
         </ul>
         {% endif %}
 
-        {% if permit.tier=="lower-tier" %}
+        {% if permit.tier=="lowerTier" %}
         <p>Based on what you told us about your organisation and what it does, we have registered you as a lower tier waste carrier.</p>
         <p>Being a lower tier waste carrier means that:</p>
 
@@ -157,7 +157,7 @@
 
         <p>If any of the details you've given us change, you must update them within 28 days by contacting the Environment Agency.</p>
 
-        {% if permit.tier=="upper-tier" %}
+        {% if permit.tier=="upperTier" %}
 
         <p>Your details:</p>
 
@@ -166,7 +166,7 @@
           
           {% endif %}
 
-          {% if permit.tier=="lower-tier" %}
+          {% if permit.tier=="lowerTier" %}
           <p>{{permit.contactFirstName}} 
             {{permit.contactLastName}} </br>
             {{permit.contactAddress}}</br>

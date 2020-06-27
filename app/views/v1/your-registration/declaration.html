@@ -22,13 +22,13 @@ Declaration
       {# permit|dump #}
       
       {% set appType = 'tier' %}
-    {% if permit.tier=="upper-tier" %}
-        {% set appType = 'upper-tier' %}
+    {% if permit.tier=="upperTier" %}
+        {% set appType = 'upperTier' %}
     {% endif %}
 
       {% set appType = 'tier' %}
-    {% if permit.tier=="lower-tier" %}
-        {% set appType = 'lower-tier' %}
+    {% if permit.tier=="lowerTier" %}
+        {% set appType = 'lowerTier' %}
     {% endif %}
 
 
@@ -41,10 +41,10 @@ Declaration
         Declaration
       </legend>
 
-          {% if permit.tier=="upper-tier" %}
+          {% if permit.tier=="upperTier" %}
       <form action="/{{folder}}/your-registration/copy-cards" method="post">
         {% endif %}
-        {% if permit.tier=="lower-tier" %}
+        {% if permit.tier=="lowerTier" %}
 
       <form action="/{{folder}}/your-registration/done/worldpay-confirm" method="post">
         {% endif %}

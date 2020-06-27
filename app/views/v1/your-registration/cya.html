@@ -23,20 +23,20 @@ Check your answers
 {# permit|dump #}
 
 {% set appType = 'tier' %}
-{% if permit.tier=="upper-tier" %}
-    {% set appType = 'upper-tier' %}
+{% if permit.tier=="upperTier" %}
+    {% set appType = 'upperTier' %}
 {% endif %}
 {% set appType = 'started' %}
-{% if permit.tier=="yes" %}
+{% if permit.started=="yes" %}
     {% set appType = 'yes' %}
 {% endif %}
 {% set appType = 'started' %}
-{% if permit.tier=="no" %}
+{% if permit.started=="no" %}
     {% set appType = 'no' %}
 {% endif %}
 {% set appType = 'tier' %}
-{% if permit.tier=="lower-tier" %}
-    {% set appType = 'lower-tier' %}
+{% if permit.tier=="lowerTier" %}
+    {% set appType = 'lowerTier' %}
 {% endif %}
 
 {% set appType = 'carry-waste' %}
@@ -70,11 +70,11 @@ Check your answers
           {% endif %}
 
         {% if permit.started=="yes" %}
-        {% if permit.tier=="lower-tier" %}
-        <p>Based on the information you provided, you are an lower tier waste carrier.</p>
+        {% if permit.tier=="lowerTier" %}
+        <p>Based on the information you provided, you are a lower tier waste carrier.</p>
         {% endif %}
 
-        {% if permit.tier=="upper-tier" %}
+        {% if permit.tier=="upperTier" %}
         <p>Based on the information you provided, you are an upper tier waste carrier.</p>
         <p>The charge for this is £154, which will register you for 3 years.</p>
         {% endif %}
@@ -94,12 +94,12 @@ Check your answers
 
           <li>your principal place of business is in England</li>
              <!-- 
-          {% if permit.tier=="upper-tier" %}
+          {% if permit.tier=="upperTier" %}
           <li>you do deal with waste from other businesses or households</li>
           <li>you do deal with construction or demolition waste</li>
           {% endif %}
 
-        {% if permit.tier=="lower-tier" %}
+        {% if permit.tier=="lowerTier" %}
         <li>you do not deal with waste from other businesses or households</li>
           <li>you do not deal with construction or demolition waste</li>
           {% endif %}-->
@@ -111,11 +111,11 @@ Check your answers
 <h2 class="govuk-heading-m">Registration</h2>
 
         <ul class="govuk-list govuk-list--bullet">
-          {% if permit.tier=="lower-tier" %}
+          {% if permit.tier=="lowerTier" %}
             <li>a lower tier waste carrier</li>
             {% endif %}
 
-            {% if permit.tier=="upper-tier" %}
+            {% if permit.tier=="upperTier" %}
             <li>an upper tier waste carrier</li>
             <li>a carrier, broker and dealer (you carry waste yourselves and arrange for others to carry it).</li>
             {% endif %}
@@ -147,7 +147,7 @@ Check your answers
         </br>
         <hr>
       </br>
-      {% if permit.tier=="upper-tier" %}
+      {% if permit.tier=="upperTier" %}
 
       <h2 class="govuk-heading-m">Directors</h2>
       <p>{{permit.directorFirstname}} 

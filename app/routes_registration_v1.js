@@ -101,16 +101,16 @@ router.get('/your-registration/new-registration', function (req, res) {
   // Route to check if country is England
   router.post('/your-registration/choose-country-check', function (req, res) {
   
-    if (req.body['where-do-you-live']=="england") {
+    if (req.body['whereDoYouLive']=="england") {
         res.redirect("/"+folder+"/your-registration/registration-holder")
 
-    } if(req.body['where-do-you-live']=="scotland") {
+    } if(req.body['whereDoYouLive']=="scotland") {
         res.redirect("/"+folder+"/your-registration/you-can-register-in-scotland")
             
-    } if(req.body['where-do-you-live']=="wales") {
+    } if(req.body['whereDoYouLive']=="wales") {
         res.redirect("/"+folder+"/your-registration/you-can-register-in-wales")
    
-    } if(req.body['where-do-you-live']=="northern-ireland") {
+    } if(req.body['whereDoYouLive']=="northern-ireland") {
         res.redirect("/"+folder+"/your-registration/you-can-register-in-northern-ireland")
        
     } else {

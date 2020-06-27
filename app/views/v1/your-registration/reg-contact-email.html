@@ -23,13 +23,13 @@ What’s the contact email address?
       {# permit|dump #}
       
       {% set appType = 'tier' %}
-      {% if permit.tier=="upper-tier" %}
-          {% set appType = 'upper-tier' %}
+      {% if permit.tier=="upperTier" %}
+          {% set appType = 'upperTier' %}
       {% endif %}
       
       {% set appType = 'tier' %}
-      {% if permit.tier=="lower-tier" %}
-          {% set appType = 'lower-tier' %}
+      {% if permit.tier=="lowerTier" %}
+          {% set appType = 'lowerTier' %}
       {% endif %}
       
 
@@ -43,7 +43,7 @@ What’s the contact email address?
       <form action="/{{folder}}/your-registration/reg-contact-address-postcode" method="post">
 
         </br>
-        {% if permit.tier=="upper-tier" %}
+        {% if permit.tier=="upperTier" %}
         
       <p>We will contact you on this email address when your registration is due to be renewed.</p>
 

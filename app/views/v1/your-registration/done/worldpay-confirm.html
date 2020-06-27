@@ -20,12 +20,12 @@ What type of business or organisation are you?
 {% block content %}
 
 {% set appType = 'tier' %}
-{% if permit.tier=="upper-tier" %}
-    {% set appType = 'upper-tier' %}
+{% if permit.tier=="upperTier" %}
+    {% set appType = 'upperTier' %}
 {% endif %}
 {% set appType = 'tier' %}
-{% if permit.tier=="lower-tier" %}
-    {% set appType = 'lower-tier' %}
+{% if permit.tier=="lowerTier" %}
+    {% set appType = 'lowerTier' %}
 {% endif %}
 
     <div class="govuk-grid-row">
@@ -55,7 +55,7 @@ What type of business or organisation are you?
         {% endif %}
 
 
-        {% if permit.tier=="upper-tier" %}
+        {% if permit.tier=="upperTier" %}
 
         <ul class="govuk-list govuk-list--bullet">
           <li>Your organisation's details will appear on the public register within 5 days.</li>
@@ -77,7 +77,7 @@ What type of business or organisation are you?
         </p>
       </br>      </br>      </br>      </br>      </br>
 
-      {% if permit.tier=="upper-tier" %}
+      {% if permit.tier=="upperTier" %}
         <p><a href="/{{folder}}/wcr-magic-link/email-receipt-worldpay" target="_blank">Testing link to payment received email</a></p>
         {% endif %}
 
