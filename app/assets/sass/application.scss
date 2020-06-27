@@ -210,10 +210,11 @@ textarea {
 	}
 
 #worldpay-success{
-	background-image:url('/public/images/worldpay/worldpay-success-bg.gif');
-	height:390px;
+	background-image:url('/public/images/worldpay/worldpay-success-sg.png');
+	height:330px;
 	width:764px;
-	margin:0 auto 40px auto;
+  margin:0 auto 30px auto;
+  font-size: medium;
 	position: relative;
   }
   
@@ -221,8 +222,8 @@ textarea {
 
 #worldpay-continue-button{
 	position:absolute;
-	top:270px;
-	left:590px;
+	top:245px;
+	left:550px;
 	margin:0;
 	padding:0;
 	}
