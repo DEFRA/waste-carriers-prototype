@@ -19,6 +19,15 @@ What type of business or organisation are you?
 {% endblock %}
 {% block content %}
 
+{% set appType = 'tier' %}
+{% if permit.tier=="upper-tier" %}
+    {% set appType = 'upper-tier' %}
+{% endif %}
+{% set appType = 'tier' %}
+{% if permit.tier=="lower-tier" %}
+    {% set appType = 'lower-tier' %}
+{% endif %}
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-panel govuk-panel--confirmation3">
@@ -37,13 +46,25 @@ What type of business or organisation are you?
 
         <h2 class="govuk-heading-m">What happens next</h2>
 
+        {% if permit.tier=="lower-tier" %}
+
+        <ul class="govuk-list govuk-list--bullet">
+        <li>Your organisation's details will appear on the public register within 5 days.</li>
+        <li>Lower tier registrations do not expire.</li>
+        </ul>
+        {% endif %}
+
+
+        {% if permit.tier=="upper-tier" %}
+
         <ul class="govuk-list govuk-list--bullet">
           <li>Your organisation's details will appear on the public register within 5 days.</li>
           <li>We will contact you on this email address before this registration is due to expire in September 2023.</li>
           <li>If we cannot reach you when the renewal is due, you’ll have to pay more for a new upper tier registration.</li>
           
           </ul>
-          
+          {% endif %}
+
           <p>Contact the Environment Agency on  <a href="mailto:nccc-carrierbroker@environment-agency.gov.uk">nccc-carrierbroker@environment-agency.gov.uk</a> or 03708 506506 if you have questions or if your details change.</p>
 
 
@@ -56,7 +77,12 @@ What type of business or organisation are you?
         </p>
       </br>      </br>      </br>      </br>      </br>
 
+      {% if permit.tier=="upper-tier" %}
         <p><a href="/{{folder}}/wcr-magic-link/email-receipt-worldpay" target="_blank">Testing link to payment received email</a></p>
+        {% endif %}
+
+
+        <p><a href="/{{folder}}/wcr-magic-link/email-reg-confirm" target="_blank">Testing link to registration confirmed email</a></p>
 
       </div>
 
