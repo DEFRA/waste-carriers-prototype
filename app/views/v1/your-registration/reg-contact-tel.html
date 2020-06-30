@@ -39,7 +39,11 @@ What’s the contact telephone number?
           <label class="govuk-label" for="contactTel">Telephone number</br>
             <span class="govuk-hint">This can be a landline or mobile</span>
             </label>
+            {% if permit.contactTel=="07758333729" %}
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="contactTel" name="contactTel" value="07758333729"/>
+          {% else %}
           <input type="text" class="govuk-input govuk-!-width-one-half" id="contactTel" name="contactTel"/>
+          {% endif %}
         </div>
 
 

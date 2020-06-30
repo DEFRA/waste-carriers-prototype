@@ -19,6 +19,16 @@ Do you carry the waste?
 {% endblock %}
 {% block content %}
 
+{% set appType = 'started' %}
+{% if permit.started=="yes" %}
+    {% set appType = 'yes' %}
+{% endif %}
+{% set appType = 'started' %}
+{% if permit.started=="no" %}
+    {% set appType = 'no' %}
+{% endif %}
+{# permit|dump #}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -26,7 +36,6 @@ Do you carry the waste?
 
                 <div class="govuk-form-group">
 
-                  {# permit|dump #}
                   <fieldset class="govuk-fieldset">
 
                               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -40,17 +49,27 @@ Do you carry the waste?
                   <fieldset class="govuk-fieldset">
 
               <div class="govuk-radios">
-
+                {% if permit.carryWaste=="yes" %}
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="carry-waste" name="carry-waste" type="radio" value="yes">
-                      <label class="govuk-label govuk-radios__label" for="carry-waste">
+                      <input class="govuk-radios__input" id="carryWaste" name="carryWaste" type="radio" value="yes" checked="checked">
+                      <label class="govuk-label govuk-radios__label" for="carryWaste">
                         We carry the waste (carrier and dealer)
                       </label>
                     </div>
+                    {% else %}
+                  
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="carryWaste" name="carryWaste" type="radio" value="yes">
+                      <label class="govuk-label govuk-radios__label" for="carryWaste">
+                        We carry the waste (carrier and dealer)
+                      </label>
+                    </div>
+                    {% endif %}
+
 
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="carry-waste" name="carry-waste" type="radio" value="outsourse">
-                      <label class="govuk-label govuk-radios__label" for="carry-waste">
+                      <input class="govuk-radios__input" id="carryWaste" name="carryWaste" type="radio" value="outsourse">
+                      <label class="govuk-label govuk-radios__label" for="carryWaste">
                         We arrange for others to carry it (broker and dealer)
                       </label>
                     </div>
@@ -61,8 +80,8 @@ Do you carry the waste?
 
 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="carry-waste" name="carry-waste" type="radio" value="both">
-                  <label class="govuk-label govuk-radios__label" for="carry-waste">
+                  <input class="govuk-radios__input" id="carryWaste" name="carryWaste" type="radio" value="both">
+                  <label class="govuk-label govuk-radios__label" for="carryWaste">
                     We do both (carrier, broker and dealer)
                   </label>
                 </div>

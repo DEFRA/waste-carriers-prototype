@@ -19,7 +19,14 @@ What's the name of the company?
 {% endblock %}
 {% block content %}
 
-
+{% set appType = 'started' %}
+{% if permit.started=="yes" %}
+    {% set appType = 'yes' %}
+{% endif %}
+{% set appType = 'started' %}
+{% if permit.started=="no" %}
+    {% set appType = 'no' %}
+{% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -38,8 +45,14 @@ What's the name of the company?
           <label class="govuk-label" for="companyName">
             Company trading name
             </label>
+            {% if permit.companyName=="My nice building company" %}
 
+          <input class="govuk-input govuk-!-width-one-half" id="companyName" name="companyName" type="text" value="My nice building company">
+          {% else %}
           <input class="govuk-input govuk-!-width-one-half" id="companyName" name="companyName" type="text">
+          {% endif %}
+
+
         </div>
       
       </fieldset>

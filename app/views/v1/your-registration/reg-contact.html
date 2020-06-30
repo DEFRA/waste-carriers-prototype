@@ -40,14 +40,23 @@ Who should we contact about this registration?
       
         <div class="govuk-form-group">
           <label class="govuk-label" for="contactFirstName">First name</label>
+          {% if permit.contactFirstName=="Julia" %}
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="contactFirstName" name="contactFirstName" value="Julia" />
+          {% else %}
           <input type="text" class="govuk-input govuk-!-width-one-half" id="contactFirstName" name="contactFirstName"/>
+          {% endif %}
+
         </div>
       
         <div class="govuk-form-group">
           <label class="govuk-label" for="contactLastName">Last name</label>
-          <input type="text" class="govuk-input govuk-!-width-one-half" id="contactLastName" name="contactLastName"/>
-        </div>
+          {% if permit.contactLastName=="Smith" %}
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="contactLastName" name="contactLastName" value="Smith" />
+          {% else %}
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="contactLastName" name="contactLastName" />
+          {% endif %}
 
+        </div>
 
         </div>
       </fieldset>

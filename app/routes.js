@@ -28,8 +28,30 @@ router.get('/', function (req, res) {
   })
 
   // dummy session data upper tier renew for magic link
-  router.get('/magic', function (req, res) {
-    req.session.data = { tier: 'upperTier',started:'no' }
+  router.get('/magic', function (req, res) { req.session.data = { 
+    started:'no', 
+    companyNumber:'CBU453565', 
+    whereDoYouLive:'england', 
+    tier:'upperTier',
+    companyName:'My nice building company',
+    companyNumber:'10659975',
+    companyPost:'BS1 5AH',
+    receiptEmail:'admin@mynicebuilding.co.uk',
+    compAddress:'10, GRANGE ROAD, BRISTOL',
+    directorFirstname:'Sam',
+    directorLastname:'Jones',
+    registrationHolder:'ltdComp',
+    carryWaste:'yes',
+    directorDOBday:'7',
+    directorDOBmonth:'10',
+    directorDOByear:'1966',
+    contactFirstName:'Julia',
+    contactLastName:'Smith',
+    contactTel:'07758333729',
+    contactEmail:'admin@mynicebuilding.co.uk',
+    contactPostcode:'BS1 5AH',
+    contactAddress:'12, GRANGE ROAD, BRISTOL',
+   }
     res.redirect(`/v1/your-registration/about-to-renew`)
   })
 

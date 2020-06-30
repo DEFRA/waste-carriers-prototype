@@ -19,6 +19,18 @@ What type of business or organisation are you?
 {% endblock %}
 {% block content %}
 
+{% set appType = 'started' %}
+{% if permit.started=="yes" %}
+    {% set appType = 'yes' %}
+{% endif %}
+{% set appType = 'started' %}
+{% if permit.started=="no" %}
+    {% set appType = 'no' %}
+{% endif %}
+
+{# permit|dump #}
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -41,44 +53,53 @@ What type of business or organisation are you?
               <div class="govuk-radios">
 
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="registration-holder" name="registration-holder" type="radio" value="sole-trader">
-                      <label class="govuk-label govuk-radios__label" for="registration-holder">
+                      <input class="govuk-radios__input" id="registrationHolder" name="registrationHolder" type="radio" value="sole-trader">
+                      <label class="govuk-label govuk-radios__label" for="registrationHolder">
                         Individual or sole trader
                       </label>
                     </div>
-
+                    {% if permit.registrationHolder=="ltdComp" %}
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="registration-holder-2" name="registration-holder" type="radio" value="ltd-comp">
-                      <label class="govuk-label govuk-radios__label" for="registration-holder-2">
+                      <input class="govuk-radios__input" id="registrationHolder2" name="registrationHolder" type="radio" value="ltdComp" checked="checked">
+                      <label class="govuk-label govuk-radios__label" for="registrationHolder2">
                         Limited company
                       </label>
                     </div>
+                    {% else %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="registrationHolder2" name="registrationHolder" type="radio" value="ltdComp">
+                      <label class="govuk-label govuk-radios__label" for="registrationHolder2">
+                        Limited company
+                      </label>
+                    </div>
+                    {% endif %}
+
 
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="registration-holder-3" name="registration-holder" type="radio" value="partnership">
-                      <label class="govuk-label govuk-radios__label" for="registration-holder-3">
+                      <input class="govuk-radios__input" id="registrationHolder3" name="registrationHolder" type="radio" value="partnership">
+                      <label class="govuk-label govuk-radios__label" for="registrationHolder3">
                         Partnership
                       </label>
                     </div>
 
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="registration-holder-4" name="registration-holder" type="radio" value="llp"> 
-                      <label class="govuk-label govuk-radios__label" for="registration-holder-4">
+                      <input class="govuk-radios__input" id="registrationHolder4" name="registrationHolder" type="radio" value="llp"> 
+                      <label class="govuk-label govuk-radios__label" for="registrationHolder4">
                         Limited liability partnership
                       </label>
                     </div>
 
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="registration-holder-4" name="registration-holder" type="radio" value="la-public-body">
-                      <label class="govuk-label govuk-radios__label" for="registration-holder-4">
+                      <input class="govuk-radios__input" id="registrationHolder5" name="registrationHolder" type="radio" value="la-public-body">
+                      <label class="govuk-label govuk-radios__label" for="rregistrationHolder5">
                         Local authority or public body
                       </label>
                     </div>
 
 
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="registration-holder-4" name="registration-holder" type="radio" value="charity-trust">
-                      <label class="govuk-label govuk-radios__label" for="registration-holdere-4">
+                      <input class="govuk-radios__input" id="registrationHolder6" name="registrationHolder" type="radio" value="charity-trust">
+                      <label class="govuk-label govuk-radios__label" for="registrationHolder6">
                         Charity or trust
                       </label>
                     </div>

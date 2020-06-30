@@ -58,12 +58,22 @@ What’s the contact email address?
           <label class="govuk-label" for="contactEmail">Email address</br>
             <span class="govuk-hint">We’ll send emails about this registration to this address</span>
             </label>
+            {% if permit.contactEmail=="admin@mynicebuilding.co.uk" %}
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="contactEmail" name="contactEmail" value="admin@mynicebuilding.co.uk" />
+          {% else %}
           <input type="text" class="govuk-input govuk-!-width-one-half" id="contactEmail" name="contactEmail" />
+          {% endif %}
+
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="conf_email_reg-contact">Confirm email address</br>
             </label>
+            {% if permit.contactEmail=="admin@mynicebuilding.co.uk" %}
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="contactEmailconfirm" name="contactEmailconfirm" value="admin@mynicebuilding.co.uk"/>
+          {% else %}
           <input type="text" class="govuk-input govuk-!-width-one-half" id="contactEmailconfirm" name="contactEmailconfirm"/>
+          {% endif %}
+
         </div>
 
           
