@@ -23,6 +23,10 @@ What type of business or organisation are you?
 {% if permit.tier=="upperTier" %}
     {% set appType = 'upperTier' %}
 {% endif %}
+{% set appType = 'receiptEmail' %}
+{% if permit.receiptEmail=="null" %}
+    {% set appType = 'defaultEmail' %}
+{% endif %}
 {% set appType = 'tier' %}
 {% if permit.tier=="lowerTier" %}
     {% set appType = 'lowerTier' %}
@@ -42,7 +46,13 @@ What type of business or organisation are you?
         </div>
 
         <p>We’ve sent a registration confirmation and certificate to {{permit.contactEmail}}.</p>
-        <p> We will also send a receipt to the same email address once your payment has processed.</p>
+
+        {% if permit.receiptEmail=="" %}
+        <p>We will also send a receipt to {{permit.contactEmail}} after we process your payment.</p>
+        {% else %}
+
+        <p> We will also send a receipt to {{permit.receiptEmail}} after we process your payment.</p>
+        {% endif %}
 
         <h2 class="govuk-heading-m">What happens next</h2>
 

@@ -93,6 +93,7 @@ router.get('/', function (req, res) {
         tier:'upperTier',
         companyName:'My nice building company',
         companyPost:'BS1 5AH',
+        receiptEmail:'admin@mynicebuilding.co.uk',
         compAddress:'10, GRANGE ROAD, BRISTOL',
         directorFirstname:'Sam',
         directorLastname:'Jones',

@@ -30,6 +30,12 @@ What type of business or organisation are you?
     {% set appType = 'no' %}
 {% endif %}
 
+{% set appType = 'receiptEmail' %}
+{% if permit.receiptEmail=="null" %}
+    {% set appType = 'defaultEmail' %}
+{% endif %}
+
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-panel govuk-panel--confirmation2">
@@ -129,13 +135,16 @@ What type of business or organisation are you?
   </p>          </div>
         </details>
 
-        <p class="govuk-body">
-          We’ve sent an email to {{permit.contactEmail}} with your payment details and instructions.
-        </p>
-        <p class="govuk-body">
-          We will also send a receipt to the same email address once payment is processed.
-        </p>
-
+          {% set appType = 'receiptEmail' %}
+          {% if permit.receiptEmail=="null" %}
+              {% set appType = 'defaultEmail' %}
+          {% endif %}
+          {% if permit.receiptEmail=="" %}
+          <p>We will also send a receipt to {{permit.contactEmail}} after we process your payment.</p>
+          {% else %}
+          
+          <p> We will also send a receipt to {{permit.receiptEmail}} after we process your payment.</p>
+          {% endif %}
 
 
 
