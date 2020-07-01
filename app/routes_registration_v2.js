@@ -49,7 +49,7 @@ router.use(function (req, res, next) {
     // dummy session data upper tier renew for magic link
     router.get('/magic', function (req, res) { req.session.data = { 
       started:'no', 
-      companyNumber:'CBDU334955', 
+      companyNumber:'10659975', 
       whereDoYouLive:'england', 
       tier:'upperTier',
       companyName:'My nice building company',
@@ -78,7 +78,7 @@ router.use(function (req, res, next) {
   router.get('/upper-tier-reg', function (req, res) {
     req.session.data = { 
       started:'yes', 
-      companyNumber:'CBDU334955', 
+      companyNumber:'10659975', 
       whereDoYouLive:'england', 
       tier:'upperTier',
       companyName:'My nice building company',
@@ -104,7 +104,7 @@ router.use(function (req, res, next) {
     router.get('/lower-tier-reg', function (req, res) {
       req.session.data = { 
         started:'yes', 
-        companyNumber:'CBDU334955', 
+        companyNumber:'10659975', 
         whereDoYouLive:'england', 
         tier:'lowerTier',
         companyName:'My nice building company',
@@ -129,7 +129,7 @@ router.use(function (req, res, next) {
       router.get('/upper-tier-renewal', function (req, res) {
         req.session.data = { 
           started:'no', 
-          companyNumber:'CBDU334955', 
+          companyNumber:'10659975', 
           whereDoYouLive:'england', 
           tier:'upperTier',
           companyName:'My nice building company',
@@ -156,7 +156,7 @@ router.use(function (req, res, next) {
       router.get('/renewal-confirm-page', function (req, res) {
         req.session.data = { 
           started:'no', 
-          companyNumber:'CBDU334955', 
+          companyNumber:'10659975', 
           whereDoYouLive:'england', 
           tier:'upperTier',
           companyName:'My nice building company',
@@ -182,7 +182,7 @@ router.use(function (req, res, next) {
       router.get('/renewal-choose-payment', function (req, res) {
         req.session.data = { 
           started:'no', 
-          companyNumber:'CBDU334955', 
+          companyNumber:'10659975', 
           whereDoYouLive:'england', 
           tier:'upperTier',
           companyName:'My nice building company',
