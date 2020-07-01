@@ -1,0 +1,142 @@
+{% extends "layout_unbranded.html" %}
+
+{% set imgpath="/public/images/" %}
+
+{% block page_title %}
+  Gmail | Your payment has been received 
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block main %}
+
+{% set appType = 'receiptEmail' %}
+{% if permit.receiptEmail=="null" %}
+    {% set appType = 'defaultEmail' %}
+{% endif %}
+
+<div id="email">
+
+<div id="gmail_header">
+  <img src="{{ imgpath }}gmail_header.png" alt="" />
+</div>
+
+<div class="govuk-grid-row">
+
+    <div style="width:15%" class="govuk-grid-column-one-quarter">
+        <img style="margin-bottom:600px" src="{{ imgpath }}gmail_menu_left.png" alt="" />
+    </div>
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="subject">
+        You need to pay for your waste carriers registration
+  <img class="inboxicon" src="{{ imgpath }}gmail_icon_inbox.png" alt="" />
+      </p>
+    </div>
+      <div class="govuk-grid-column-one-quarter">
+        <div id="email_text">
+        <img src="{{ imgpath }}gmail_from_text.png" alt="" /> 
+
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <div id="email_text">
+
+    </div>
+  </div>
+    
+    <div class="govuk-grid-column-two-thirds">
+
+      <div id="email_text">
+
+        <div id="banner" class="email-banner"><img src="{{ imgpath }}gov_uk_email_header.png" alt="GOV.UK" /></div>
+
+      </div
+    ></div>
+
+
+        <div class="govuk-grid-column-one-half">
+          <div id="email_text">
+
+      </br>
+      <p>{{permit.contactFirstName}} 
+        {{permit.contactLastName}}</p>
+        <h1 class="govuk-heading-m">
+          You need to pay for your waste carriers registration and then email us to confirm payment
+        </h1>
+
+        <p>We cannot register you until your payment clears.
+         </p>
+          </p>
+        <h2 class="govuk-heading-s">Pay by bank transfer (Bacs) with these details</br>
+      </h2>
+
+        <table class="govuk-table">
+          
+          <tbody>          
+
+            <tr>
+              <td style="padding-top: 10px;">Sort code</td>
+              <td style="padding-top: 10px; font-weight: bold">60-70-80</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Account number</td>
+              <td style="padding-top: 10px; font-weight: bold">1001 4411</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Payment reference:</td>
+              <td style="padding-top: 10px; font-weight: bold">CBDU130776</td>
+            </tr>
+            <tr>
+              {% if permit.started=="no" %}
+              <td style="padding-top: 10px;">Payment due</span></td>
+              <td style="padding-top: 10px; font-weight: bold">£150.00</td>
+              {% endif %}
+              {% if permit.started=="yes" %}
+              <td style="padding-top: 10px;">Payment due</span></td>
+              <td style="padding-top: 10px; font-weight: bold">£110.00</td>
+              {% endif %}
+            </tr>
+
+          </tbody>
+        </table>
+
+          <p><span style="font-weight: bold; color: grey">Overseas payments</span></br>
+            <span style="color: grey">IBAN:  GB23 NWBK 607080 10014411</br>
+            SWIFTBIC: NWBK GB2L</br>
+            Currency: Sterling</span>
+          </p>
+
+          <h3 class="govuk-heading-m">Email us your registration CBDU130776 to confirm you’ve paid</h2>
+
+            <p>Email us at  <a href="mailto:ea_fsc_ar@gov.sscl.com">ea_fsc_ar@gov.sscl.com</a> </p>
+            <p>When you email us, include the date you paid, the amount and the payment reference CBDU130776.</p>
+            {% if permit.receiptEmail=="" %}
+            <p>We will also send a receipt to {{permit.contactEmail}} after we process your payment.</p>
+            {% else %}
+            <p> We will also send a receipt to {{permit.receiptEmail}} after we process your payment.</p>
+            {% endif %}
+            <p>Allow 5 working days for your payment to reach us.</p>
+            <p>You’re not legally entitled to operate as a waste carrier until we have received your payment and confirmed your registration.</p>
+            <p>If any of your details change you must update your registration within 28 days.</p>
+            <p>If you have enquiries please contact the Environment Agency helpline 03708 506506.</p>
+            <p>This is an automated email, please do not reply.</p>
+
+
+      </div><!-- // end #email_text -->
+
+    </div><!-- // end .column 3/4 -->
+
+  </div><!-- // end .grid_row -->
+
+</div><!-- // end #email -->
+
+{% endblock %}

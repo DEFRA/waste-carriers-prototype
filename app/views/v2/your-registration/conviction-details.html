@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Details of the person with a conviction
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+      {% endblock %}
+      {% block content %}
+      
+      {# permit|dump #}
+      
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        Details of the person with a conviction
+      </legend>
+
+      <form action="/{{folder}}/your-registration/reg-contact" method="post">
+
+        <div class="form-group">
+
+
+      
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="first_name_convict">First name</label>
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="first_name_convict" />
+        </div>
+      
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="last_name_convict">Last name</label>
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="last_name_convict" />
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="role_convict">Position</label>
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="role_convict" />
+        </div>
+      
+        <p>Date of birth
+            <span id="passport-issued-hint" class="govuk-hint">
+              For example, 26 5 1976</span></p>
+            <div class="govuk-date-input" id="convict-dob">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="convict-dob-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="convict-dob-day" name="convict-dob-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="convict-dob-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="convict-dob-month" name="convict-dob-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="convict-dob-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="convict-dob-year" name="convict-dob-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          
+            <p><a href="#">Add another person</a></p>
+
+</br>
+<div class="govuk-form-group">
+  {{ govukButton({
+      text: "Continue"
+    }) }}
+</div>
+
+</form>
+  
+</div>
+</div>
+
+{% endblock %}

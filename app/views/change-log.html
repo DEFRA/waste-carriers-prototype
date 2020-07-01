@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Prototype change log
+{% endblock %}
+
+<!--
+REGEXP replacements for google HTML
+ class="c[0-9][0-9]? ?c?[0-9][0-9]?"
+</?span>
+
+<h2 class="heading-large"   with  <h2 class="heading-large" class="heading-large"
+-->
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <h1 class="govuk-heading-l">
+  Prototype change log
+  </h1>
+
+  <p>This summarises the main changes we've made in response to feedback.</p>
+  
+  <h2 class="govuk-heading-m">Version 1 to 2</h2>
+  <p><a href="index-v2">Version 2</a></p>
+
+
+  <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header govuk-!-width-one-quarter" scope="col">Summary of change in v2</th>
+          <th class="govuk-table__header govuk-!-width-one-half" scope="col">User need, reason or source</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-!-width-one-quarter" scope="row">Receipt email to be specified within journey to ensure registration contact and payee can have different email addresses.</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">So that if an agent applied on behalf of a carrier the carrier doesn't phone EA to query the price difference once they get a receipt, additionally, so that any user in general completing the form can have the receipt sent to another party without having to forward the details themselves. If the receipt email is left blank it'll instead go to the contact email as before. <a href="https://eaflood.atlassian.net/browse/RUBY-1137">https://eaflood.atlassian.net/browse/RUBY-1126</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-!-width-one-quarter" scope="row">Final reminder flow to include postal return for updating email address and resending magic link, in addition to an online route with renewal code and short url.</td>
+          <td class="govuk-table__cell govuk-!-width-one-half">So that if a user does not renew after two renewal emails they can receive another reminder, this time offline, in case their details are out of date or the email is missed. This version does not rely on typing the magic link which proved very unpopular and barely usable as a url to type manually. <a href="https://eaflood.atlassian.net/browse/RUBY-1126">https://eaflood.atlassian.net/browse/RUBY-1126</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+</main>
+
+{% endblock %}

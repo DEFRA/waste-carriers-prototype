@@ -1,0 +1,159 @@
+{% extends "layout_unbranded.html" %}
+
+{% set imgpath="/public/images/" %}
+
+{% block page_title %}
+  Gmail | Your payment has been received 
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block main %}
+
+
+<div id="email">
+
+<div id="gmail_header">
+  <img src="{{ imgpath }}gmail_header.png" alt="" />
+</div>
+
+<div class="govuk-grid-row">
+
+    <div style="width:15%" class="govuk-grid-column-one-quarter">
+        <img style="margin-bottom:600px" src="{{ imgpath }}gmail_menu_left.png" alt="" />
+    </div>
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="subject">
+        Your payment has been received  <img class="inboxicon" src="{{ imgpath }}gmail_icon_inbox.png" alt="" />
+      </p>
+    </div>
+      <div class="govuk-grid-column-one-quarter">
+        <div id="email_text">
+        <img src="{{ imgpath }}gmail_from_text.png" alt="" /> 
+
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <div id="email_text">
+          {% if permit.started=="no" %}
+          <a href="https://waste-carriers.herokuapp.com{{ imgpath }}receipt-for-payment.pdf" target="_blank" download="Payment receipt">
+            {% endif %}
+          {% if permit.started=="yes" %}
+          <a href="https://waste-carriers.herokuapp.com{{ imgpath }}cardReceiptReg.pdf" target="_blank" download="Payment receipt">
+          {% endif %}
+   
+       <img src="{{ imgpath }}pdf-icon.png" style="max-width: 80%;" alt="GOV.UK" />
+      </a>
+    </div>
+  </div>
+    
+    <div class="govuk-grid-column-two-thirds">
+
+      <div id="email_text">
+
+        <div id="banner" class="email-banner"><img src="{{ imgpath }}gov_uk_email_header.png" alt="GOV.UK" /></div>
+
+      </div
+    ></div>
+
+
+        <div class="govuk-grid-column-one-half">
+          <div id="email_text">
+
+      </br>
+      <p>Dear {{permit.contactFirstName}} 
+        {{permit.contactLastName}},</p>
+        <h1 class="govuk-heading-m">
+          Your payment has been received
+        </h1>
+
+        <p>A separate email will confirm your registration.</p>
+        <p>You’re not legally entitled to operate as a waste carrier until we have confirmed your registration.</p>
+        <p>Download the email attachment for a print version of the receipt.</p>
+        <h2 class="govuk-heading-s">Receipt:</br>
+      </h2>
+      <p>Receipt for registration as a waste carrier, broker or dealer
+      </p>
+
+      
+      <p>Waste carrier registration number: CBDU130776</br></br>
+        Date: 19 June 2020</p>
+        </br>
+        <h2 class="govuk-heading-s">Business details:</br>
+        </h2>
+        <p>
+          Acme Really Long Business Name Limited
+          Acme House, Acme Trading Estate, Really Long Town Name, Newtown NN1 3WW</p>
+                       
+        <h2 class="govuk-heading-s">Paid on 19 June 2020 by card payment</h2>
+        <p>Payment reference: CBDU130776</p>
+        <div class="govuk-section-break govuk-section-break--visible"></div>
+
+        <table class="govuk-table">
+          
+          <tbody>
+            {% if permit.started=="no" %}
+            <tr>
+              <td>Cost of renewal</td>
+              <td>£105.00</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Charge for changing carrier type</td>
+              <td style="padding-top: 10px;">£40.00</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Cost of registration card</td>
+              <td style="padding-top: 10px;">£5.00</td>
+            </tr>
+              <td style="padding-top: 10px;"><span style="font-weight: bold">Total paid</span></td>
+              <td style="padding-top: 10px;">£150.00</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">VAT does not apply</td>
+            </tr>
+            {% endif %}
+            {% if permit.started=="yes" %}
+
+            <tr>
+              <td>Cost of registration</td>
+              <td>£105.00</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">Cost of registration card</td>
+              <td style="padding-top: 10px;">£5.00</td>
+            </tr>
+              <td style="padding-top: 10px;"><span style="font-weight: bold">Total paid</span></td>
+              <td style="padding-top: 10px;">£110.00</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 10px;">VAT does not apply</td>
+            </tr>
+          {% endif %}
+          </tbody>
+        </table>
+        <div class="govuk-section-break govuk-section-break--visible"></div>
+
+          <p>If you have enquiries please contact the Environment Agency helpline 03708 506506.
+          </p>
+
+          <p>This is an automated email, please do not reply.</p>
+
+
+      </div><!-- // end #email_text -->
+
+    </div><!-- // end .column 3/4 -->
+
+  </div><!-- // end .grid_row -->
+
+</div><!-- // end #email -->
+
+{% endblock %}

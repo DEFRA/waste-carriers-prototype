@@ -1,0 +1,107 @@
+
+{% extends "layout.html" %}
+
+{% set appType = 'tier' %}
+{% if permit.tier=="upperTier" %}
+    {% set appType = 'upperTier' %}
+{% endif %}
+
+{% set appType = 'tier' %}
+{% if permit.tier=="lowerTier" %}
+    {% set appType = 'lowerTier' %}
+{% endif %}
+
+{% if permit.tier=="upperTier" %}
+{% block pageTitle %}
+You need to register as a upper tier waste carrier
+{% endblock %}
+{% endif %}
+
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+{% import folder+"/custom_inc/macros.html" as macros %}
+
+{# permit|dump #}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if permit.tier=="upperTier" %}
+    <form action="/{{folder}}/your-registration/do-you-carry-waste" method="post">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            You need to register as an upper tier waste carrier
+          </h1>
+        </legend>
+
+        <p>It will cost £105 to register as an upper tier waste carrier for 3 years. You will have to renew every 3 years.
+        </p>
+{% endif %}
+
+{% if permit.tier=="lowerTier" %}
+<form action="/{{folder}}/your-registration/comp-no" method="post">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            You need to register as a lower tier waste carrier
+          </h1>
+        </legend>
+        <p>There is no charge to register as a lower tier waste carrier. Your registration will not expire.
+        </p>
+{% endif %}
+ 
+
+      </fieldset>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What are lower and upper tiers?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+            <p>You are lower tier if you:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>only carry waste produced by your own business unless it’s construction or demolition waste</li>
+                <li>only work with animal by-products, mining and quarry waste or waste from agricultural premises</li>
+                <li>are a charity or voluntary organisation</li>
+            </ul>
+            <p>If none of the lower tier criteria apply, you are upper tier. Examples include if you:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>carry other people's waste</li>
+                <li>carry your own construction or demolition waste</li>
+                <li>arrange for waste from other businesses to be carried, recovered or disposed of</li>
+                <li>buy or sell waste, or use an agent to do so</li>
+            </ul>
+
+
+            </div>
+          </details>
+
+    <div class="govuk-form-group">
+      {{ govukButton({
+          text: "Continue"
+        }) }}
+    </div>
+
+  </form>
+
+  </div>
+</div>
+
+{% endblock %}

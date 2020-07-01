@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-var folder = "v1"
+var folder = "v2"
 var servicename = "Register as a waste carrier"
 var paymentMethod = "govpay"  // or "govpay"
 
@@ -37,13 +37,13 @@ router.use(function (req, res, next) {
     // set up redirect for letter testing
     router.get('/renew/bluefishbox', function (req, res) {
       req.session.data = { permitoperation: 'mcp' }
-      res.redirect(`/v1/your-registration/about-to-renew`)
+      res.redirect("/"+folder+"/your-registration/about-to-renew")
     })
   
     // set up redirect for letter testing
       router.get('/renew/782gkd57bdjs84hf', function (req, res) {
       req.session.data = { permitoperation: 'mcp' }
-      res.redirect(`/v1/your-registration/about-to-renew`)
+      res.redirect("/"+folder+"/your-registration/about-to-renew")
     })
 
     // dummy session data upper tier renew for magic link
@@ -71,7 +71,7 @@ router.use(function (req, res, next) {
       contactPostcode:'BS1 5AH',
       contactAddress:'12, GRANGE ROAD, BRISTOL',
      }
-      res.redirect(`/v1/your-registration/about-to-renew`)
+     res.redirect("/"+folder+"/your-registration/about-to-renew")
     })
 
 
@@ -97,7 +97,7 @@ router.use(function (req, res, next) {
       contactPostcode:'BS1 5AH',
       contactAddress:'12, GRANGE ROAD, BRISTOL',
     }
-    res.redirect(`/v1/your-registration/cya`)
+    res.redirect("/"+folder+"/your-registration/cya")
   })  
   
   
@@ -123,7 +123,7 @@ router.use(function (req, res, next) {
         contactPostcode:'BS1 5AH',
         contactAddress:'12, GRANGE ROAD, BRISTOL',
       }
-      res.redirect(`/v1/your-registration/cya`)
+      res.redirect("/"+folder+"/your-registration/cya")
     })  
   
       // dummy session data upper tier renewal
@@ -149,7 +149,7 @@ router.use(function (req, res, next) {
           contactPostcode:'BS1 5AH',
           contactAddress:'12, GRANGE ROAD, BRISTOL',
         }
-        res.redirect(`/v1/your-registration/cya`)
+        res.redirect("/"+folder+"/your-registration/cya")
       })  
   
   
@@ -175,7 +175,7 @@ router.use(function (req, res, next) {
           contactPostcode:'BS1 5AH',
           contactAddress:'12, GRANGE ROAD, BRISTOL',
         }
-        res.redirect(`/v1/your-registration/done/worldpay-confirm`)
+        res.redirect("/"+folder+"/your-registration/done/worldpay-confirm")
       })  
   
   
@@ -201,7 +201,7 @@ router.use(function (req, res, next) {
           contactPostcode:'BS1 5AH',
           contactAddress:'12, GRANGE ROAD, BRISTOL',
         }
-        res.redirect(`/v1/your-registration/pay/choose-payment`)
+        res.redirect("/"+folder+"/your-registration/pay/choose-payment")
       })  
       
   // New registration ==============================================================
