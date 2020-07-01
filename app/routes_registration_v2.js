@@ -53,7 +53,6 @@ router.use(function (req, res, next) {
       whereDoYouLive:'england', 
       tier:'upperTier',
       companyName:'My nice building company',
-      companyNumber:'10659975',
       companyPost:'BS1 5AH',
       receiptEmail:'admin@mynicebuilding.co.uk',
       compAddress:'10, GRANGE ROAD, BRISTOL',
