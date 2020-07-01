@@ -18,6 +18,15 @@ What kind of registration do you need?
 <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
 {% block content %}
+{% set appType = 'started' %}
+{% if permit.started=="yes" %}
+    {% set appType = 'yes' %}
+{% endif %}
+{% set appType = 'started' %}
+{% if permit.started=="no" %}
+    {% set appType = 'no' %}
+{% endif %}
+{# permit|dump #}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -29,9 +38,16 @@ What kind of registration do you need?
                     <fieldset class="govuk-fieldset">
 
                               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                {% if permit.started=="no" %}
+                                <h1 class="govuk-fieldset__heading">
+                                  Check your tier
+                                </h1>
+                                {% else %}
                                 <h1 class="govuk-fieldset__heading">
                                   What kind of registration do you need?
                                 </h1>
+                                {% endif %}
+
                               </legend>                     
                     </fieldset>
                   </br>
@@ -39,35 +55,61 @@ What kind of registration do you need?
 
                   <fieldset class="govuk-fieldset">
 
+                    {% if permit.started=="no" %}
+
+                    <div class="govuk-radios">
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="tier" name="tier" type="radio" value="upperTier">
+                        <label class="govuk-label govuk-radios__label" for="tier-2">
+                          I know I need an upper tier registration (continue)
+                        </label>
+                      </div>
+      
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="tier" name="tier" type="radio" value="help-decide-tier">
+                        <label class="govuk-label govuk-radios__label" for="tier-3">
+                          I want to check my tier is correct before renewing
+                        </label>
+                      </div>
+      
+      
+                </div>
+              {% else %}
               <div class="govuk-radios">
 
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="tier" name="tier" type="radio" value="help-decide-tier">
-                      <label class="govuk-label govuk-radios__label" for="registration-holder">
-                        Help me decide
-                      </label>
-                    </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="tier" name="tier" type="radio" value="help-decide-tier">
+                  <label class="govuk-label govuk-radios__label" for="registration-holder">
+                    Help me decide
+                  </label>
+                </div>
 
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="tier" name="tier" type="radio" value="upperTier">
-                      <label class="govuk-label govuk-radios__label" for="tier-2">
-                        I need an upper tier registration
-                      </label>
-                    </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="tier" name="tier" type="radio" value="upperTier">
+                  <label class="govuk-label govuk-radios__label" for="tier-2">
+                    I need an upper tier registration
+                  </label>
+                </div>
 
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="tier" name="tier" type="radio" value="lowerTier">
-                      <label class="govuk-label govuk-radios__label" for="tier-3">
-                        I need a lower tier registration
-                      </label>
-                    </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="tier" name="tier" type="radio" value="lowerTier">
+                  <label class="govuk-label govuk-radios__label" for="tier-3">
+                    I need a lower tier registration
+                  </label>
+                </div>
 
 
-              </div>
+          </div>
+          
+          {% endif %}
 
           </fieldset>
 
-        </br>
+
+        {% if permit.started=="no" %}
+        {% else %}
+      </br>
           <details class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
@@ -97,6 +139,8 @@ What kind of registration do you need?
       </ul>
 </div>
           </details>
+          {% endif %}
+
         </div>
         <p class="govuk-hint">We’ll only use your answers to determine what tier your registration should be. Your answers do not affect what you can do as a registered waste carrier, or license you to perform certain activities.
 
