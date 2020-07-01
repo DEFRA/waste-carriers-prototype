@@ -49,7 +49,7 @@ router.use(function (req, res, next) {
     // dummy session data upper tier renew for magic link
     router.get('/magic', function (req, res) { req.session.data = { 
       started:'no', 
-      companyNumber:'CBU453565', 
+      companyNumber:'CBDU334955', 
       whereDoYouLive:'england', 
       tier:'upperTier',
       companyName:'My nice building company',
@@ -79,7 +79,7 @@ router.use(function (req, res, next) {
   router.get('/upper-tier-reg', function (req, res) {
     req.session.data = { 
       started:'yes', 
-      companyNumber:'CBU453565', 
+      companyNumber:'CBDU334955', 
       whereDoYouLive:'england', 
       tier:'upperTier',
       companyName:'My nice building company',
@@ -105,7 +105,7 @@ router.use(function (req, res, next) {
     router.get('/lower-tier-reg', function (req, res) {
       req.session.data = { 
         started:'yes', 
-        companyNumber:'CBU453565', 
+        companyNumber:'CBDU334955', 
         whereDoYouLive:'england', 
         tier:'lowerTier',
         companyName:'My nice building company',
@@ -130,7 +130,7 @@ router.use(function (req, res, next) {
       router.get('/upper-tier-renewal', function (req, res) {
         req.session.data = { 
           started:'no', 
-          companyNumber:'CBU453565', 
+          companyNumber:'CBDU334955', 
           whereDoYouLive:'england', 
           tier:'upperTier',
           companyName:'My nice building company',
@@ -157,7 +157,7 @@ router.use(function (req, res, next) {
       router.get('/renewal-confirm-page', function (req, res) {
         req.session.data = { 
           started:'no', 
-          companyNumber:'CBU453565', 
+          companyNumber:'CBDU334955', 
           whereDoYouLive:'england', 
           tier:'upperTier',
           companyName:'My nice building company',
@@ -183,7 +183,7 @@ router.use(function (req, res, next) {
       router.get('/renewal-choose-payment', function (req, res) {
         req.session.data = { 
           started:'no', 
-          companyNumber:'CBU453565', 
+          companyNumber:'CBDU334955', 
           whereDoYouLive:'england', 
           tier:'upperTier',
           companyName:'My nice building company',
