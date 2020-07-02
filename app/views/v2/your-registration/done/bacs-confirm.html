@@ -71,7 +71,7 @@ You must now pay by bank transfer
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Payment due</td>
               {% if permit.started=="no" %}
-              <th scope="row" class="govuk-table__header">£ 150.00
+              <th scope="row" class="govuk-table__header">£ 110.00
               {% endif %}
               {% if permit.started=="yes" %}
               <th scope="row" class="govuk-table__header">£ 110.00
@@ -127,7 +127,7 @@ You must now pay by bank transfer
   Payment confirmation reference: CBDU334955</br>
   Date paid: </br>
   {% if permit.started=="no" %}
-  Amount: £150.00
+  Amount: £110.00
   {% endif %}
               {% if permit.started=="yes" %}
   Amount: £110.00
