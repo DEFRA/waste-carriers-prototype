@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Do you have a letter with a renewal code?
+Did you receive a letter containing an 8-digit renewal code?
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -24,7 +24,7 @@ Do you have a letter with a renewal code?
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/{{folder}}/your-registration/renew-code" method="post">
+    <form action="{{formAction}}" method="post">
 
     <div class="govuk-form-group">
 
@@ -34,7 +34,7 @@ Do you have a letter with a renewal code?
         name: "letter",
 fieldset: {
   legend: {
-    text: "Do you have a letter with a renewal code?",
+    text: "Did you receive a letter containing an 8-digit renewal code?",
     classes: "govuk-fieldset__legend--l"
   }
 },
@@ -52,10 +52,21 @@ items: [
 }) }}
 
 </div>
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I do not know</span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>The letter includes a box with 4 steps.</p> 
+    <p>Step 2 contains your 8-digit renewal code.</p>
+    <p>If you no longer have the letter try searching your email for the renewal email, which should have a link directly to your renewal online.</p>
+    <p>If you cannot find either the letter or the email, call the Environment Agency helpline on 03708 506506 (Monday to Friday, 8am to 6pm) or email <a href="mailto:nccc-carrierbroker@environment-agency.gov.uk">nccc-carrierbroker@environment-agency.gov.uk</a></p>
+    
+  </div>
+</details>
 
 
-      <!--<p> <a href="/{{folder}}/pages/privacy" target="_blank">Privacy: how we use your personal information (opens new tab)</a>
-    </p>-->
 
     <div class="govuk-form-group">
       {{ govukButton({

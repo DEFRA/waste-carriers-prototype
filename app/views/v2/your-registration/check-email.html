@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-What is the two part renewal code from your letter?
+Check your email inbox and junk mail for a renewal email
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -19,44 +19,28 @@ What is the two part renewal code from your letter?
 {% endblock %}
 {% block content %}
 
-{% set appType = 'started' %}
-{% if permit.started=="yes" %}
-    {% set appType = 'yes' %}
-{% endif %}
-{% set appType = 'started' %}
-{% if permit.started=="no" %}
-    {% set appType = 'no' %}
-{% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/{{folder}}/magic" method="post">
+    <form action="/{{folder}}/your-registration/wc-number" method="post">
 
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            What is the 8-digit renewal code from your letter?
+            Check your email inbox and junk mail for a renewal email
           </h1>
         </legend>
-      
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="companyName">
-            Your renewal letter should have an 8-digit renewal code</label>
-
-          <span class="govuk-hint">Example: 3h2s  67k9</span>
-
-          <input class="govuk-input govuk-!-width-one-half" id="renewCode" name="renewCode" type="text">
-        </br>        </br>
-  
-        </div>
-      
+     <p>You may have received an email with a link that takes you to your renewal.</p>
+     
+     <p>The email would be from <a href="mailto:no-reply@environment-agency.gov.uk">no-reply@environment-agency.gov.uk</a>.</p>
+     
       </fieldset>
-
+</br></br>
         <div class="govuk-form-group">
       {{ govukButton({
-          text: "Continue"
+          text: "I do not have an email"
         }) }}
     </div>
 

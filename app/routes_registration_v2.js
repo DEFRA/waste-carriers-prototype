@@ -370,6 +370,29 @@ router.get('/your-registration/new-registration', function (req, res) {
   }
 })
 
+// received an 8 digit code letter yes or no ==============================================================
+
+  router.get('/your-registration/letter', function (req, res) {
+    res.render(folder+'/your-registration/letter',{
+        "formAction":"/"+folder+"/your-registration/letter-check"
+    })
+  })
+
+  router.post('/your-registration/letter', function (req, res) {
+    res.render(folder+'/your-registration/letter',{
+        "formAction":"/"+folder+"/your-registration/letter-check"
+    })
+  })
+  
+  // Route to check if they have a letter or not
+  router.post('/your-registration/letter-check', function (req, res) {
+  
+    if (req.body['letter']=="yes") {
+      res.redirect("/"+folder+"/your-registration/renew-code")
+    } else {
+      res.redirect("/"+folder+"/your-registration/check-email")
+    }
+  })
 
     // Registration type form action based on tier status ==============================================================
 
