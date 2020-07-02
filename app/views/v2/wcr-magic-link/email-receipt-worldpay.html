@@ -45,10 +45,10 @@
     <div class="govuk-grid-column-one-quarter">
       <div id="email_text">
           {% if permit.started=="no" %}
-          <a href="https://waste-carriers.herokuapp.com{{ imgpath }}receipt-for-payment.pdf" target="_blank" download="Payment receipt">
+          <a href="https://waste-carriers.herokuapp.com{{ imgpath }}card-renewal-receipt.pdf" target="_blank" download="Payment receipt renewal">
             {% endif %}
           {% if permit.started=="yes" %}
-          <a href="https://waste-carriers.herokuapp.com{{ imgpath }}cardReceiptReg.pdf" target="_blank" download="Payment receipt">
+          <a href="https://waste-carriers.herokuapp.com{{ imgpath }}card-reg-receipt.pdf" target="_blank" download="Payment receipt registration">
           {% endif %}
    
        <img src="{{ imgpath }}pdf-icon.png" style="max-width: 80%;" alt="GOV.UK" />
