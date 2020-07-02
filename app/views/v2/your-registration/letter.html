@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Is this a new registration?
+Do you have a letter with a renewal code?
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -15,7 +15,7 @@ Is this a new registration?
     </span>
   </p>
 </div>
-      <!--<a href="javascript:history.back();" class="govuk-back-link">Back</a>-->
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
 {% endblock %}
 {% block content %}
 
@@ -24,17 +24,17 @@ Is this a new registration?
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/{{folder}}/your-registration/letter" method="post">
+    <form action="/{{folder}}/your-registration/renew-code" method="post">
 
     <div class="govuk-form-group">
 
 
       {{ govukRadios({
         idPrefix: "new-registration",
-        name: "started",
+        name: "letter",
 fieldset: {
   legend: {
-    text: "Is this a new registration?    ",
+    text: "Do you have a letter with a renewal code?",
     classes: "govuk-fieldset__legend--l"
   }
 },
@@ -45,7 +45,7 @@ items: [
   },
   {
     value: "no",
-    text: "No, I want to renew an existing registration"
+    text: "No"
   }
 
 ]

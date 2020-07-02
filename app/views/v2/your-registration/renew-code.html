@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-What's the name of the company?
+What is the two part renewal code from your letter?
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -31,26 +31,36 @@ What's the name of the company?
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/{{folder}}/your-registration/comp-address-postcode" method="post">
+    <form action="/{{folder}}/your-registration/about-to-renew" method="post">
 
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            What's the name of the company?
+            What is the two part renewal code from your letter?
           </h1>
         </legend>
       
         <div class="govuk-form-group">
           <label class="govuk-label" for="companyName">
-            Company trading name
-            </label>
+            Your renewal letter should have two four digit codes, enter them both
+          </label>
 
-            <input type="text" maxlength="19" class="text" />
+          <span class="govuk-hint">Example: 3h2s  67k9</span>
 
-          <input class="govuk-input govuk-!-width-one-half" id="companyName" name="companyName" type="text" value="My nice building company">
-
-
+          <input class="govuk-input govuk-!-width-one-half" id="renewCode" name="renewCode" type="text">
+        </br>        </br>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                I do not know the number</span>
+            </summary>
+            <div class="govuk-details__text">
+            <p>The number should be in your letter. It is in the second of the four ‘How to renew online' steps.</p>
+            <p>If you no longer have the letter try searching your email for the renewal email, which should have a link directly to your renewal online.</p>  
+            <p>If you cannot find either the letter or the email, call the Environment Agency helpline on 03708 506506 (Monday to Friday, 8am to 6pm) or email <a href="mailto:nccc-carrierbroker@environment-agency.gov.uk">nccc-carrierbroker@environment-agency.gov.uk</a>.</p>
+          </div>
+          </details>
 
         </div>
       
@@ -67,11 +77,5 @@ What's the name of the company?
   </div>
 </div>
 
+
 {% endblock %}
-<script>$('.text').on('keyup', function() {
-  var foo = $(this).val().split(" ").join(""); 
-  if (foo.length > 0) {
-    foo = foo.match(new RegExp('.{1,4}', 'g')).join(" ");
-  }
-  $(this).val(foo);
-});</script>

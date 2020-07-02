@@ -16,6 +16,13 @@
   </p>
 </div>
 <!--<a href="javascript:history.back();" class="govuk-back-link">Back</a>-->
+{% if permit.letter=="yes" %}
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+      {% endif %}
+      {% if permit.letter=="no" %}
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+      {% endif %}
+{# permit|dump #}
 {% endblock %}
 {% block content %}
 

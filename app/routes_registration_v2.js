@@ -223,7 +223,7 @@ router.get('/your-registration/new-registration', function (req, res) {
     if (req.body['started']=="yes") {
       res.redirect("/"+folder+"/your-registration/choose-country")
     } else {
-      res.redirect("/"+folder+"/your-registration/wc-number")
+      res.redirect("/"+folder+"/your-registration/letter")
     }
   })
 
