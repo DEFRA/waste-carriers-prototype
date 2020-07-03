@@ -64,12 +64,10 @@
     <div class="govuk-grid-column-one-quarter">
       <div id="email_text">
         {% if permit.started=="no" %}
-        <!--<a href="#" target="_blank" download="Certificate for waste carrier">-->
-        <a href="#">
+        <a href="{{ imgpath }}WasteCarrierRegistrationCertificate-CBDU1.pdf" target="_blank" download="Certificate for waste carrier">
         {% endif %}
         {% if permit.started=="yes" %}
-        <!--<a href="#" target="_blank" download="Certificate for waste carrier">-->
-          <a href="#"">
+        <a href="{{ imgpath }}WasteCarrierRegistrationCertificate-CBDU1.pdf" target="_blank" download="Certificate for waste carrier">
         {% endif %}
               
        <img src="{{ imgpath }}cert-pdf.png" style="max-width: 80%;" alt="GOV.UK" />
