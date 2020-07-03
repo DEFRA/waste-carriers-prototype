@@ -1,0 +1,111 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Sign in
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+      {% endblock %}
+      {% block content %}
+      {% import folder+"/custom_inc/macros.html" as macros %}
+      
+      {# permit|dump #}
+      
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        Sign in
+      </legend>
+
+      <form action="/{{folder}}/your-registration/wc-number" method="post">
+
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="userName">Email</br>
+            </label>
+
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="userName" name="userName" />
+
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="password">Password</br>
+            </label>
+
+          <input type="text" class="govuk-input govuk-!-width-one-half" id="password" name="password"/>
+
+
+        </div>
+
+          
+
+</br>
+<div class="govuk-form-group">
+  {{ govukButton({
+      text: "Sign in"
+    }) }}
+</div>
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I've forgotten my password
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+<p>You can <a href="#">reset your password.</a></p>  </div>
+</details>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I do not know the email address for my account
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+<p>If you don’t know the email address belonging to your account, contact our helpline on 03708 506506.</p>  </div>
+</details>
+
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I need to confirm my email address
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+<p>After you've registered as a waste carrier, you must confirm your email address to access your account. <a href="#">Resend a confirmation email.</a></p>  </div>
+</details>
+
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      My account is locked
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
+<p>If you or someone else tries to sign in too many times using incorrect details, the account may be temporarily locked. <a href="#">Unlock your account</a>.</p>  </div>
+</details>
+</form>
+  
+</div>
+</div>
+
+{% endblock %}

@@ -365,7 +365,7 @@ router.get('/your-registration/new-registration', function (req, res) {
       })
     } else {
       res.render(folder+'/your-registration/wc-number',{
-        "formAction":"/"+folder+"/your-registration/about-to-renew"
+        "formAction":"/"+folder+"/magic"
     })
   }
 })

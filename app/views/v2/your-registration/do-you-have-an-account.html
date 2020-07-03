@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-What is the two part renewal code from your letter?
+Do you have an account?
 {% endblock %}
 {% block beforeContent %}
 <div class="govuk-phase-banner">
@@ -19,46 +19,31 @@ What is the two part renewal code from your letter?
 {% endblock %}
 {% block content %}
 
-{% set appType = 'started' %}
-{% if permit.started=="yes" %}
-    {% set appType = 'yes' %}
-{% endif %}
-{% set appType = 'started' %}
-{% if permit.started=="no" %}
-    {% set appType = 'no' %}
-{% endif %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/{{folder}}/magic" method="post">
+    <form action="/{{folder}}/your-registration/sign-in" method="post">
 
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            What is the 8-digit renewal code from your letter?
+            Do you have an account for the Waste Carriers service?
           </h1>
         </legend>
-      
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="companyName">
-            <span class="govuk-hint">Example: 3h2s  67k9</span></label>
+     <p>If you do have an account, continue to sign in for your online renewal.</p>
+      </br>
+      <div class="govuk-form-group">
+        {{ govukButton({
+            text: "I have an account"
+          }) }}
 
-          
+     <p>If you do not have an account for the Waste Carriers service, call the Environment Agency helpline on 03708 506506 (Monday to Friday, 8am to 6pm) or email <a href="mailto:nccc-carrierbroker@environment-agency.gov.uk">nccc-carrierbroker@environment-agency.gov.uk</a></p>
+    </div>
 
-          <input class="govuk-input govuk-!-width-one-half" id="renewCode" name="renewCode" type="text">
-        </br>        </br>
-  
-        </div>
-      
       </fieldset>
 
-        <div class="govuk-form-group">
-      {{ govukButton({
-          text: "Continue"
-        }) }}
-    </div>
 
   </form>
 
