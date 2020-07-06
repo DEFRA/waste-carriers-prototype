@@ -61,15 +61,22 @@ What is the two part renewal code from your letter?
 
           
             <span id="passport-issued-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> We do not recognise that code, please try again.
+              <span class="govuk-visually-hidden">Error:</span> We do not recognise that code, please try again.            </span>
+              <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="renewCode" name="renewCode" type="text">
+            </br>            </br>
+              <span id="passport-issued-error" class="govuk-error-message">
+
+              If you can not enter the code, try searching your email inbox or junk mail for the renewal email, which should have a link directly to your renewal online.
+
             </span>
-          <input class="govuk-input govuk-!-width-one-half govuk-input--error" id="renewCode" name="renewCode" type="text">
-        </br>        </br>
+       
   
         </div>
       
       </fieldset>
-     
+
+          <p>If you cannot find either the letter or the email, call the Environment Agency helpline on 03708 506506 (Monday to Friday, 8am to 6pm) or email <a href="mailto:nccc-carrierbroker@environment-agency.gov.uk">nccc-carrierbroker@environment-agency.gov.uk</a></p>
+
         <div class="govuk-form-group">
       {{ govukButton({
           text: "Continue"
