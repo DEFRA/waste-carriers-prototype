@@ -82,9 +82,12 @@
         <p>Download the email attachment for a print version of the receipt.</p>
         <h2 class="govuk-heading-s">Receipt:</br>
       </h2>
-      <p>Receipt for renewal as a waste carrier, broker or dealer
-      </p>
-
+      {% if permit.started=="no" %}
+      <p>Receipt for renewal as a waste carrier, broker or dealer</p>
+      {% endif %}
+      {% if permit.started=="yes" %}
+      <p>Receipt for registration as a waste carrier, broker or dealer</p>
+      {% endif %}
       
       <p>Waste carrier registration number: CBDU334955</br></br>
         Date: 19 June 2020</p>
