@@ -177,6 +177,31 @@ router.use(function (req, res, next) {
         res.redirect("/"+folder+"/your-registration/done/worldpay-confirm")
       })  
   
+       // dummy session data renewal confirm
+       router.get('/worldpay-payment-flow', function (req, res) {
+        req.session.data = { 
+          started:'no', 
+          worldpay: 'payment',
+          companyNumber:'10659975', 
+          whereDoYouLive:'england', 
+          tier:'upperTier',
+          companyName:'My nice building company',
+          companyPost:'BS1 5AH',
+          compAddress:'10, GRANGE ROAD, BRISTOL',
+          directorFirstname:'Sam',
+          directorLastname:'Jones',
+          directorDOBday:'7',
+          directorDOBmonth:'10',
+          directorDOByear:'1966',
+          contactFirstName:'Julia',
+          contactLastName:'Smith',
+          contactTel:'07758333729',
+          contactEmail:'admin@mynicebuilding.co.uk',
+          contactPostcode:'BS1 5AH',
+          contactAddress:'12, GRANGE ROAD, BRISTOL',
+        }
+        res.redirect("/"+folder+"/your-registration/pay/choose-payment")
+      })       
   
       // dummy session data renewal confirm
       router.get('/renewal-choose-payment', function (req, res) {
