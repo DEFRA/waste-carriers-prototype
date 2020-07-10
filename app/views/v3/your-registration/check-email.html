@@ -1,0 +1,53 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your email inbox and junk mail for a renewal email
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/{{folder}}/your-registration/do-you-have-an-account" method="post">
+
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Check your email inbox and junk mail for a renewal email
+          </h1>
+        </legend>
+     <p>You may have received an email with a link that takes you to your renewal.</p>
+     
+     <p>The email would be from <a href="mailto:registrations@wastecarriersregistration.service.gov.uk">registrations@wastecarriersregistration.service.gov.uk</a>.</p>
+     
+      </fieldset>
+</br></br>
+        <div class="govuk-form-group">
+      {{ govukButton({
+          text: "I do not have an email"
+        }) }}
+    </div>
+
+  </form>
+
+  </div>
+</div>
+
+
+{% endblock %}

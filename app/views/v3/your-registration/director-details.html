@@ -1,0 +1,94 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Company director details
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+      {% endblock %}
+      {% block content %}
+      
+      {# permit|dump #}
+      
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          Company director details
+        </legend>
+
+        <form action="/{{folder}}/your-registration/convictions" method="post">
+
+              <div class="form-group">
+
+
+                    
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="first_name">First name</label>
+                        <input type="text" class="govuk-input govuk-!-width-one-half" id="directorFirstname" name="directorFirstname" />
+                      </div>
+                    
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="last_name">Last name</label>
+                        <input type="text" class="govuk-input govuk-!-width-one-half" id="directorLastname" name="directorLastname" />
+                      </div>
+                    
+                      <p>Date of birth
+                          <span id="passport-issued-hint" class="govuk-hint">
+                            For example, 26 5 1976</span></p>
+                          <div class="govuk-date-input" id="passport-issued">
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="directorDOBday">
+                                  Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="directorDOBday" name="directorDOBday" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="directorDOBmonth">
+                                  Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="directorDOBmonth" name="directorDOBmonth" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                              <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="directorDOByear">
+                                  Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="directorDOByearr" name="directorDOByear" type="text" pattern="[0-9]*" inputmode="numeric">
+                              </div>
+                            </div>
+                          </div>
+                        
+                          <p><a href="#">Add another person</a></p>
+              </div>
+
+              </br>
+              
+          <div class="govuk-form-group">
+               {{ govukButton({
+                   text: "Continue"
+                 }) }}
+           </div>
+
+        </form>
+    
+  </div>
+</div>
+
+{% endblock %}

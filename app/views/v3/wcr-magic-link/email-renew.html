@@ -1,0 +1,81 @@
+{% extends "layout_unbranded.html" %}
+
+{% set imgpath="/public/images/" %}
+
+{% block page_title %}
+  Gmail | Renew your waste carrier registration by 15 June 2020
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block main %}
+
+
+<div id="email">
+
+<div id="gmail_header">
+  <img src="{{ imgpath }}gmail_header.png" alt="" />
+</div>
+
+<div class="govuk-grid-row">
+
+    <div style="width:15%" class="govuk-grid-column-one-quarter">
+        <img style="margin-bottom:600px" src="{{ imgpath }}gmail_menu_left.png" alt="" />
+    </div>
+
+
+    <div class="govuk-grid-column-one-half">
+
+      <p class="subject">
+        Renew your waste carrier registration by 12 September 2020 <img class="inboxicon" src="{{ imgpath }}gmail_icon_inbox.png" alt="" />
+      </p>
+
+      <p class="from">
+        <img src="{{ imgpath }}gmail_from_text.png" alt="" />
+      </p>
+
+      <div id="email_text">
+
+        <div id="banner" class="email-banner"><img src="{{ imgpath }}gov_uk_email_header.png" alt="GOV.UK" /></div>
+      </br>
+<p>Dear Chris Jones,</p>
+        <h1 class="govuk-heading-m">
+          Renew your waste carrier registration by 12 September 2020
+        </h1>
+        <p>It costs £105 and lasts for 3 years.
+        </p>
+        <h2 class="govuk-heading-s">You can renew online in a few minutes at:</br>
+        <a href="/{{folder}}/your-registration/about-to-renew.html" target="_blank">wastecarriersregistration.service.gov.uk/renew/782gkd57bdjs84hf</a>
+      </h2>
+
+      <p>Registration number: CBDU334955</br></br>
+
+        If you no longer need a registration, you can ignore these reminders. You cannot transport, buy, sell or dispose of waste without a registration.</p></br>
+
+        <p><img width="200" height="57" alt="" src="/public/images/ea_logo_sm.png"></p>
+                                           
+      </br>
+<p>Environment Agency</br>
+  Telephone 03708 506 506, Monday to Friday (8am to 6pm)</br>
+  <a href="mailto:nccc-carrierbroker@environment-agency.gov.uk">nccc-carrierbroker@environment-agency.gov.uk</a></br>      </br>
+  
+  This is an automated email, please do not reply.</p>
+
+
+
+
+      </div><!-- // end #email_text -->
+
+    </div><!-- // end .column 3/4 -->
+
+  </div><!-- // end .grid_row -->
+
+</div><!-- // end #email -->
+
+{% endblock %}

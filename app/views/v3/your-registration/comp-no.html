@@ -1,0 +1,90 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What's the registration number of the company?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+{% set appType = 'started' %}
+{% if permit.started=="yes" %}
+    {% set appType = 'yes' %}
+{% endif %}
+{% set appType = 'started' %}
+{% if permit.started=="no" %}
+    {% set appType = 'no' %}
+{% endif %}
+
+{# permit|dump #}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/{{folder}}/your-registration/comp-name" method="post">
+
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What's the registration number of the company?
+          </h1>
+        </legend>
+      
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="companyNumber">
+            Registration number<br/>
+            </label>
+            <p class="govuk-hint">An 8 digit number, or 2 letters followed by a 6 digit number</p>
+
+          {% if permit.companyNumber=="10659975" %}
+
+          <input class="govuk-input govuk-!-width-one-half" id="companyNumber" name="companyNumber" type="text" value="10659975">
+
+          {% else %}
+
+          <input class="govuk-input govuk-!-width-one-half" id="companyNumber" name="companyNumber" type="text">
+
+          {% endif %}
+
+        </div>
+      
+      </fieldset>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What's a registration number?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+        <p>This is issued when the company is registered, and can be found on your Certificate of Incorporation and any paperwork from Companies House.</p>
+        </div>
+      </details>
+
+        <p>We'll look this number up in the Companies House register to make sure it belongs to an active company.</p>
+    <div class="govuk-form-group">
+      {{ govukButton({
+          text: "Continue"
+        }) }}
+    </div>
+
+  </form>
+
+  </div>
+</div>
+
+{% endblock %}

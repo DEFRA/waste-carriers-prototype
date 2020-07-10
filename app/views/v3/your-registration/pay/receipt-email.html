@@ -1,0 +1,53 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Where should we send payment receipts?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/{{folder}}/your-registration/pay/choose-payment" method="post">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-0">
+                Where should we send payment receipts?
+              </h1>
+            </legend>
+           
+            <p>We will send all receipts for payment to this address once the payment has been processed.</p>
+
+            <p>If you leave this blank, we will send receipts to the contact email, {{permit.contactEmail}}</p>
+            <div class="govuk-form-group">
+            </br>
+
+              <label class="govuk-label" for="receiptEmail">
+                Email address
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="receiptEmail" name="receiptEmail" type="text">
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+            </a>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

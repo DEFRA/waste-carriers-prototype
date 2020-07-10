@@ -1,0 +1,43 @@
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Example without branding
+{% endblock %}
+
+{% block content %}
+
+
+<div id="worldpay-card-details">
+
+    <div id="worldpay-description">
+      {% if permit.started=="no" %}
+      Waste carrier renewal
+      {% endif %}
+
+      {% if permit.started=="yes" %}
+      Waste carrier registration
+      {% endif %}
+
+    </div>
+
+
+    {% if permit.started=="no" %}
+    <div id="worldpay-amount">
+      £110.00
+      </div>      
+      {% endif %}
+    {% if permit.started=="yes" %}
+    <div id="worldpay-amount">
+      £159.00
+      </div>    
+      {% endif %}
+
+    
+    <div id="worldpay-pay-button">
+     <a href="/{{folder}}/your-registration/pay/worldpay/worldpay-success"><img alt="" src="/public/images/worldpay/_.gif" height="40px" width="80px" border="0" /></a>
+    </div>
+
+</div>
+
+
+{% endblock %}

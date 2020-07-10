@@ -1,0 +1,65 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What's the company address?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+  beta
+</strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your
+      <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+      <a href="javascript:history.back();" class="govuk-back-link">Back</a>
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/{{folder}}/your-registration/comp-address" method="post">
+
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What's the company address?
+          </h1>
+        </legend>
+      
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="companyPost">
+            Please enter a UK postcode</label>
+            <p class="govuk-hint">For example, BS1 5AH
+            </p>
+
+          <input class="govuk-input govuk-!-width-one-half" id="companyPost" name="companyPost" type="text">
+
+        </div>
+      
+      </fieldset>
+
+      <div class="govuk-form-group">
+        {{ govukButton({
+            text: "Find address"
+          }) }}
+      </div>
+  
+    <hr>
+    <p class="text font-xsmall" id="os-notice">
+      © Crown copyright and database rights 2018 Ordnance Survey 100024198. Use of this addressing data is subject to the <a target="_blank" rel="noopener noreferrer" href="/v24/address/os_place_terms">terms and conditions (opens new window)</a>.
+    </p>
+
+  </form>
+
+  </div>
+</div>
+
+{% endblock %}

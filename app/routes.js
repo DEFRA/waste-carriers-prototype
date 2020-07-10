@@ -10,6 +10,7 @@ router.use(function (req, res, next) {
 // all routes for registration v1
 router.use('/v1', require('./routes_registration_v1'))
 router.use('/v2', require('./routes_registration_v2'))
+router.use('/v3', require('./routes_registration_v3'))
 
 // Route index page
 router.get('/', function (req, res) {

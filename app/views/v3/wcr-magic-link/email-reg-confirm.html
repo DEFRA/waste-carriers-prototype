@@ -1,0 +1,194 @@
+{% extends "layout_unbranded.html" %}
+
+{% set imgpath="/public/images/" %}
+
+{% block page_title %}
+  Gmail | You're now registered as a waste carrier, broker and dealer
+ 
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block main %}
+
+{% set appType = 'tier' %}
+{% if permit.tier=="upperTier" %}
+    {% set appType = 'upperTier' %}
+{% endif %}
+{% set appType = 'tier' %}
+{% if permit.tier=="lowerTier" %}
+    {% set appType = 'lowerTier' %}
+{% endif %}
+
+<div id="email">
+
+<div id="gmail_header">
+  <img src="{{ imgpath }}gmail_header.png" alt="" />
+</div>
+
+<div class="govuk-grid-row">
+
+    <div style="width:15%" class="govuk-grid-column-one-quarter">
+        <img style="margin-bottom:600px" src="{{ imgpath }}gmail_menu_left.png" alt="" />
+    </div>
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if permit.tier=="upperTier" %}
+      <p class="subject">
+        You're now registered as an upper tier waste carrier, broker and dealer
+  <img class="inboxicon" src="{{ imgpath }}gmail_icon_inbox.png" alt="" />
+      </p>
+      {% endif %}
+
+      {% if permit.tier=="lowerTier" %}
+      <p class="subject">
+        You're now registered as a lower tier waste carrier, broker and dealer
+  <img class="inboxicon" src="{{ imgpath }}gmail_icon_inbox.png" alt="" />
+      </p>
+      {% endif %}
+    </div>
+      <div class="govuk-grid-column-one-quarter">
+        <div id="email_text">
+        <img src="{{ imgpath }}gmail_from_text.png" alt="" /> 
+
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <div id="email_text">
+        {% if permit.started=="no" %}
+        <a href="{{ imgpath }}WasteCarrierRegistrationCertificate-CBDU1.pdf" target="_blank" download="Certificate for waste carrier">
+        {% endif %}
+        {% if permit.started=="yes" %}
+        <a href="{{ imgpath }}WasteCarrierRegistrationCertificate-CBDU1.pdf" target="_blank" download="Certificate for waste carrier">
+        {% endif %}
+              
+       <img src="{{ imgpath }}cert-pdf.png" style="max-width: 80%;" alt="GOV.UK" />
+      </a>
+    </div>
+  </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <div id="email_text">
+
+        <div id="banner" class="email-banner"><img src="{{ imgpath }}gov_uk_email_header.png" alt="GOV.UK" /></div>
+
+      </div
+    ></div>
+
+
+        <div class="govuk-grid-column-one-half">
+        </br></br>
+          <div class="govuk-panel govuk-panel--confirmation3">
+            {% if permit.tier=="upperTier" %}
+            <h1 class="govuk-panel__title">
+              You are now registered as an upper tier waste carrier, broker and dealer
+            </h1>
+            {% endif %}
+            {% if permit.tier=="lowerTier" %}
+            <h1 class="govuk-panel__title">
+              You are now registered as a lower tier waste carrier, broker and dealer
+            </h1>
+            {% endif %}
+            <div class="govuk-panel__body">
+              Your registration number is
+  
+              <br><strong>CBDU334955</strong>
+            </div>
+          </div>
+
+          <div id="email_text">
+
+      </br>
+
+      <p style="font-weight: bold;">Your certificate is attached to this email, so we won't post a copy to you unless you contact us to request one.</p>
+<p>{{permit.contactFirstName}} 
+  {{permit.contactLastName}},</p>
+
+  {% if permit.tier=="upperTier" %}
+
+        <p>Based on what you told us about your organisation and what it does, we have registered you as an an upper tier waste carrier, broker and dealer.</p>
+        <p>Being an an upper tier waste carrier, broker and dealer means that:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+
+          <li>you need to renew your registration every 3 years</li>
+          <li>you’ll need to pay a registration charge each time you renew</li>
+          <li>we will contact you on this email address when your registration is due to be renewed in 3 years’ time</li>
+          <li>if we cannot reach you, you’ll have to pay more for a new registration</li>
+
+        </ul>
+
+        <p>There are some simple rules you must follow:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+
+          <li>if you give your waste to another person or business you must check they are properly authorised to accept it, for example as a permitted site or a registered waste carrier</li>
+          <li>make sure the correct documentation is completed for each transfer of waste and that it correctly describes the waste</li>
+          <li>make sure any waste is safely handled and stored</li>
+          <li>minimise the environmental impact of waste by prioritising waste prevention, reuse, recycling and recovery over disposal</li>
+        </ul>
+        {% endif %}
+
+        {% if permit.tier=="lowerTier" %}
+        <p>Based on what you told us about your organisation and what it does, we have registered you as a lower tier waste carrier.</p>
+        <p>Being a lower tier waste carrier means that:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+
+          <li>you don’t need to pay a registration charge</li>
+          <li>you don’t need to renew your registration (it just continues automatically)</li>
+
+        </ul>
+        {% endif %}
+
+
+        <h3 class="govuk-heading-s">Updating your details</h3>
+
+        <p>If any of the details you've given us change, you must update them within 28 days by contacting the Environment Agency.</p>
+
+        {% if permit.tier=="upperTier" %}
+
+        <p>Your details:</p>
+
+        <p>{{permit.contactAddress}}</br>
+          {{permit.contactPostcode}}</p>
+          
+          {% endif %}
+
+          {% if permit.tier=="lowerTier" %}
+          <p>{{permit.contactFirstName}} 
+            {{permit.contactLastName}} </br>
+            {{permit.contactAddress}}</br>
+              {{permit.contactPostcode}}</p>
+            
+            {% endif %}
+
+
+    
+    <p>Telephone number: {{permit.contactTel}}</p>
+    <p>Registered on: 19 June 2020</p>
+    
+        <p>If you have enquiries please contact the Environment Agency helpline 03708 506506.
+          </p>
+
+          <p>This is an automated email, please do not reply.</p>
+
+
+      </div><!-- // end #email_text -->
+
+    </div><!-- // end .column 3/4 -->
+
+  </div><!-- // end .grid_row -->
+
+</div><!-- // end #email -->
+
+{% endblock %}
