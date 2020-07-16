@@ -70,7 +70,7 @@ router.use(function (req, res, next) {
       contactPostcode:'BS1 5AH',
       contactAddress:'12, GRANGE ROAD, BRISTOL',
      }
-     res.redirect("/"+folder+"/your-registration/about-to-renew")
+     res.redirect("/"+folder+"/wcr-magic-link/email-renew")
     })
 
 
