@@ -129,6 +129,7 @@ router.use(function (req, res, next) {
       router.get('/upper-tier-renewal', function (req, res) {
         req.session.data = { 
           started:'no', 
+          worldpay: 'nul',
           companyNumber:'10659975', 
           whereDoYouLive:'england', 
           tier:'upperTier',
@@ -433,7 +434,7 @@ router.get('/your-registration/new-registration', function (req, res) {
     })
   })
   
-  // Route to check if payment is bacs or card
+  // Route to check tier
   router.post('/your-registration/registration-type-check', function (req, res) {
   
     if (req.body['tier']=="help-decide-tier") {
@@ -468,11 +469,6 @@ if (req.body['convictions']=="yes") {
 }
 })
 
-  
-// set up dummy data
-router.get('/test', function (req, res) {
-  req.session.data = { permitoperation: 'mcp-standard' }
-  res.redirect(`/${folder}/your-registration/do-you-carry-waste`)
-})
+
 
 module.exports = router
